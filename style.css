@@ -200,7 +200,7 @@ a {
 }
 
 /* =================================================================
-   SECCIÓN DE VIDEO INSTITUCIONAL (ACTUALIZADA)
+   SECCIÓN DE VIDEO INSTITUCIONAL 
    ================================================================ */
 .video-section {
   padding: 64px 24px;
@@ -239,6 +239,55 @@ a {
   object-fit: cover; /* Garantiza que la imagen de portada y el video llenen el contenedor sin deformarse */
   display: block;
   border-radius: 8px;
+}
+
+/* =================================================================
+   SECCIÓN DE AUDIO INSTITUCIONAL
+   ================================================================ */
+.audio-section {
+  padding: 48px 24px;
+  background-color: var(--color-gray-light);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.audio-container-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  color: var(--color-primary); /* Rojo UTP #CC0000 */
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.audio-narration-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.audio-player-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.audio-player-container audio {
+  width: 100%;
+  max-width: 500px;
+  outline: none;
 }
 
 /* =================================================================
