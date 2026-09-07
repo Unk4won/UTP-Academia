@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academia UTP - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header class="site-header">
+      <div class="header-container">
+        <a href="index.html" class="logo-utp">
+          <span class="utp-box">U</span>
+          <span class="utp-box">T</span>
+          <span class="utp-box">P</span>
+          <span class="utp-plus">+</span>
+          <span class="utp-text">Academia</span>
+        </a>
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link">Inicio</a></li>
+            <li><a href="servicios.html" class="nav-link">Servicios</a></li>
+            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li><a href="tabla.html" class="nav-link">Tabla</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="inner-banner">
+        <h1>Contáctanos</h1>
+        <p>
+          Estamos aquí para resolver tus dudas y orientarte en tu camino
+          profesional.
+        </p>
+      </section>
+
+      <section class="contact-section">
+        <div class="contact-grid">
+          <!-- Columna 1: Información de Contacto -->
+          <div class="contact-info-card">
+            <h2>Información Institucional</h2>
+
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h3>Dirección Principal</h3>
+                <p>Av. Petit Thouars 116, Lima - Perú</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">☎️</div>
+              <div class="info-content">
+                <h3>Teléfonos y WhatsApp</h3>
+                <p><a href="#">Lima: (01) 3159-610</a></p>
+                <p><a href="#" target="_blank">WhatsApp: +51 951 234 567</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h3>Correos Electrónicos</h3>
+                <p><a href="#">contacto@academiatp.edu.pe</a></p>
+                <p><a href="#">soporte@academiatp.edu.pe</a></p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">🕒</div>
+              <div class="info-content">
+                <h3>Horario de Atención</h3>
+                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                <p>Sábado: 9:00 AM - 1:00 PM</p>
+                <p>Domingo: Cerrado</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Formulario de Contacto -->
+          <div class="contact-form-card">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="#" method="POST">
+              <div class="form-group">
+                <label for="nombre" class="form-label">Nombre Completo *</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  class="form-control"
+                  placeholder="Ej. Juan Pérez"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label"
+                  >Correo Electrónico *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="tu@email.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="telefono" class="form-label">Teléfono *</label>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  class="form-control"
+                  placeholder="+51 9XXXXXXXX"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="asunto" class="form-label">Asunto *</label>
+                <select id="asunto" name="asunto" class="form-control" required>
+                  <option value="" disabled selected>
+                    Selecciona una opción
+                  </option>
+                  <option value="consulta">Consulta general</option>
+                  <option value="cursos">Información de cursos</option>
+                  <option value="inscripcion">Inscripción</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje" class="form-label">Mensaje *</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  class="form-control"
+                  placeholder="Escribe tu consulta aquí..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="button" class="btn-submit">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h4>Academia UTP</h4>
+          <p style="font-size: 0.9rem; color: #ccc">
+            Plataforma académica y de desarrollo tecnológico exclusiva para
+            estudiantes.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Enlaces Útiles</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Catálogo de Cursos</a></li>
+            <li><a href="contacto.html">Inscripción</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Soporte</h4>
+          <ul>
+            <li><a href="contacto.html">Contáctanos</a></li>
+            <li><a href="tabla.html">Directorio Académico</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p style="font-size: 0.9rem; color: #ccc">
+            Lima, Perú<br />Tel: (01) 3159-610<br />contacto@academiatp.edu.pe
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 Academia UTP. Desarrollado por
+          <span
+            ><a
+              href="https://github.com/Unk4won"
+              style="color: var(--color-primary)"
+            >
+              Unk4won
+            </a></span
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
