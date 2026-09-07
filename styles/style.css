@@ -200,6 +200,48 @@ a {
 }
 
 /* =================================================================
+   SECCIÓN DE VIDEO INSTITUCIONAL (ACTUALIZADA)
+   ================================================================ */
+.video-section {
+  padding: 64px 24px;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.video-container-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.video-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.video-container {
+  max-width: 800px;
+  height: 450px; /* Altura fija controlada para evitar colapsos visuales */
+  margin: 0 auto;
+  background-color: var(
+    --color-black
+  ); /* Fondo oscuro de respaldo mientras carga el póster */
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garantiza que la imagen de portada y el video llenen el contenedor sin deformarse */
+  display: block;
+  border-radius: 8px;
+}
+
+/* =================================================================
    5. BOTONES GLOBALES
    ================================================================ */
 .btn-primary {
