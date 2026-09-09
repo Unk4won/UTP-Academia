@@ -1,342 +1,275 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academia UTP - Servicios y Cursos</title>
-    <!-- Google Fonts: Poppins y Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header class="site-header">
-      <div class="header-container">
-        <a href="index.html" class="logo-utp">
-          <span class="utp-box">U</span>
-          <span class="utp-box">T</span>
-          <span class="utp-box">P</span>
-          <span class="utp-plus">+</span>
-          <span class="utp-text">Academia</span>
-        </a>
-        <nav>
-          <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Inicio</a></li>
-            <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-            <li><a href="tabla.html" class="nav-link">Tabla</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTP Academia - Servicios y Cursos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikXUz4q4Eh_yL8mUK3vglmkvZxW5pKpzDWf_OQTIE0XQ2OrG_S_ambnJJ&s=10" type="image/png">
+</head>
+<body>
 
-    <main>
-      <!-- BANNER INTERIOR -->
-      <section class="inner-banner">
-        <h1>Nuestros Cursos</h1>
-        <p>
-          Elige la formación tecnológica y profesional que impulse tu carrera al
-          siguiente nivel.
-        </p>
-      </section>
+  <!-----Encabezado y menu----->
+  <header class="encabezado">
+    <div class="contenedor-encabezado">
+      <a href="index.html" class="logo">
+        <span class="logo-caja">U</span>
+        <span class="logo-caja">T</span>
+        <span class="logo-caja">P</span>
+        <span class="logo-mas">+</span>
+        <span class="logo-texto">Academia</span>
+      </a>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html" class="activo">Servicios</a></li>
+          <li><a href="registro.html">Registro</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="tabla.html">Tabla</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-      <!-- FILTRO DE CURSOS -->
-      <section class="filter-section">
-        <button class="filter-btn active">Todos</button>
-        <button class="filter-btn">Programación</button>
-        <button class="filter-btn">Diseño</button>
-        <button class="filter-btn">Marketing</button>
-        <button class="filter-btn">Negocios e Idiomas</button>
-      </section>
+  <!-----Contenido principal----->
+  <main>
 
-      <!-- GRID DE CURSOS (6 CURSOS) -->
-      <section class="catalog-section">
-        <div class="courses-grid">
-          <!-- Curso 1 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop"
-                alt="Python Básico"
-                class="course-img"
-              />
-              <span class="course-badge">Programación</span>
+    <!-----Banner interior----->
+    <section class="banner-interior">
+      <h1>Nuestros Cursos y Servicios</h1>
+      <p>Elige la formación tecnológica y profesional que impulse tu carrera al siguiente nivel.</p>
+    </section>
+
+    <!-----Filtros de cursos----->
+    <section class="filtros">
+      <button class="boton-filtro activo">Todos</button>
+      <button class="boton-filtro">Programación</button>
+      <button class="boton-filtro">Diseño</button>
+      <button class="boton-filtro">Marketing</button>
+      <button class="boton-filtro">Negocios</button>
+      <button class="boton-filtro">Idiomas</button>
+    </section>
+
+    <!-----Catalogo de cursos----->
+    <section class="cursos" style="background-color: var(--blanco); border-top: none;">
+      <div class="contenedor-cursos">
+        <div class="grid-cursos">
+
+          <!-----Curso1----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop" alt="Python Básico">
+              <span class="etiqueta-curso">Programación</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Python Básico</h3>
-              <p>
-                Domina los fundamentos de Python, el lenguaje más versátil del
-                momento. Ideal para principiantes que quieren ingresar al mundo
-                de la programación.
-              </p>
-              <div class="course-meta">
+              <p>Domina los fundamentos de Python, el lenguaje más versátil del momento. Ideal para principiantes.</p>
+              <div class="datos-curso">
                 <span>Duración: 8 semanas</span>
                 <span>Nivel: Principiante</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="contacto" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
 
-          <!-- Curso 2 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop"
-                alt="Desarrollo Web Full Stack"
-                class="course-img"
-              />
-              <span class="course-badge">Programación</span>
+          <!-----Curso2----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop" alt="Desarrollo Web Full Stack">
+              <span class="etiqueta-curso">Programación</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Desarrollo Web Full Stack</h3>
-              <p>
-                Crea aplicaciones web completas usando HTML, CSS, JavaScript,
-                React y Node.js. Conviértete en un desarrollador altamente
-                demandado.
-              </p>
-              <div class="course-meta">
+              <p>Crea aplicaciones web completas con HTML, CSS, JavaScript, React y Node.js. ¡Altamente demandado!</p>
+              <div class="datos-curso">
                 <span>Duración: 12 semanas</span>
                 <span>Nivel: Intermedio</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="#" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
 
-          <!-- Curso 3 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
-                alt="Diseño Gráfico Profesional"
-                class="course-img"
-              />
-              <span class="course-badge">Diseño</span>
+          <!-----Curso3----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop" alt="Diseño Gráfico Profesional">
+              <span class="etiqueta-curso">Diseño</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Diseño Gráfico Profesional</h3>
-              <p>
-                Aprende diseño visual con Adobe Creative Suite. Crea identidades
-                visuales, materiales de marketing y diseño web profesional.
-              </p>
-              <div class="course-meta">
+              <p>Aprende diseño visual con herramientas profesionales. Crea identidades visuales y material moderno.</p>
+              <div class="datos-curso">
                 <span>Duración: 10 semanas</span>
                 <span>Nivel: Principiante</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="contacto" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
 
-          <!-- Curso 4 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop"
-                alt="Marketing Digital"
-                class="course-img"
-              />
-              <span class="course-badge">Marketing</span>
+          <!-----Curso4----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop" alt="Marketing Digital">
+              <span class="etiqueta-curso">Marketing</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Marketing Digital y Social Media</h3>
-              <p>
-                Domina estrategias de marketing digital, posicionamiento SEO,
-                publicidad en redes sociales y análisis de datos para negocios.
-              </p>
-              <div class="course-meta">
+              <p>Domina estrategias digitales, posicionamiento SEO, publicidad en redes y análisis de datos.</p>
+              <div class="datos-curso">
                 <span>Duración: 8 semanas</span>
                 <span>Nivel: Principiante</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="contacto.html" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
 
-          <!-- Curso 5 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop"
-                alt="Inglés Empresarial"
-                class="course-img"
-              />
-              <span class="course-badge">Idiomas</span>
+          <!-----Curso5----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop" alt="Inglés Empresarial">
+              <span class="etiqueta-curso">Idiomas</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Inglés Empresarial</h3>
-              <p>
-                Mejora tu inglés para negocios. Comunicación efectiva en
-                presentaciones, reuniones corporativas y negociaciones
-                internacionales.
-              </p>
-              <div class="course-meta">
+              <p>Mejora tu inglés para negocios: presentaciones, reuniones corporativas y negociaciones internacionales.</p>
+              <div class="datos-curso">
                 <span>Duración: 16 semanas</span>
                 <span>Nivel: Intermedio</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="contacto" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
 
-          <!-- Curso 6 -->
-          <article class="course-card">
-            <div class="course-img-wrapper">
-              <img
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=400&auto=format&fit=crop"
-                alt="Transformación Digital"
-                class="course-img"
-              />
-              <span class="course-badge">Negocios</span>
+          <!-----Curso6----->
+          <article class="tarjeta-curso">
+            <div class="imagen-curso">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=400&auto=format&fit=crop" alt="Transformación Digital">
+              <span class="etiqueta-curso">Negocios</span>
             </div>
-            <div class="course-body">
+            <div class="cuerpo-curso">
               <h3>Transformación Digital</h3>
-              <p>
-                Entiende cómo la tecnología transforma los negocios actuales.
-                Gestión de proyectos digitales, innovación y herramientas
-                modernas.
-              </p>
-              <div class="course-meta">
+              <p>Entiende cómo la tecnología transforma los negocios. Gestión de proyectos digitales e innovación.</p>
+              <div class="datos-curso">
                 <span>Duración: 6 semanas</span>
                 <span>Nivel: Principiante</span>
               </div>
-              <div class="course-footer">
-                <span style="font-weight: 700; color: var(--color-primary)"
-                  >Exclusivo Estudiantes</span
-                >
-                <a href="contacto" class="btn-secondary">Inscribirse</a>
+              <div class="pie-curso">
+                <span class="destacado">Exclusivo Estudiantes</span>
+                <a href="registro.html" class="boton boton-negro">Inscribirse</a>
               </div>
             </div>
           </article>
+
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SECCIÓN TESTIMONIOS -->
-      <section class="testimonials-section">
-        <div class="testimonials-container">
-          <h2 class="section-title">Lo que dicen nuestros estudiantes</h2>
-          <div class="testimonials-grid">
-            <!-- Testimonio 1 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop"
-                  alt="Estudiante UTP"
-                  class="testimonial-avatar"
-                />
-                <div class="testimonial-info">
-                  <h4>Lucía Mendoza</h4>
-                  <span>Ingeniería de Software</span>
-                </div>
-              </div>
-              <div class="testimonial-body">
-                <p>
-                  "Tomar el curso de Desarrollo Web Full Stack en la Academia
-                  UTP me abrió las puertas para conseguir mis prácticas
-                  pre-profesionales. ¡Excelente metodología!"
-                </p>
-              </div>
-              <div class="stars">★★★★★</div>
-            </div>
+    <!--Seccion Testimonios----->
+    <section class="testimonios">
+      <h2 class="titulo-seccion">Lo que dicen nuestros estudiantes</h2>
+      <div class="grid-testimonios">
 
-            <!-- Testimonio 2 -->
-            <div class="testimonial-card">
-              <div class="testimonial-header">
-                <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
-                  alt="Estudiante UTP"
-                  class="testimonial-avatar"
-                />
-                <div class="testimonial-info">
-                  <h4>Carlos Ramírez</h4>
-                  <span>Administración de Empresas</span>
-                </div>
-              </div>
-              <div class="testimonial-body">
-                <p>
-                  "El curso de Marketing Digital complementó perfectamente mi
-                  carrera. Las clases son dinámicas y los profesores tienen
-                  experiencia real en la industria."
-                </p>
-              </div>
-              <div class="stars">★★★★★</div>
+        <div class="tarjeta-testimonio">
+          <div class="cabecera-testimonio">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ9bId3iayrLPINsPzL6YycqBugRqbss1BYbz_0eLwLg&s" alt="Lucía Mendoza" class="foto-testimonio">
+            <div>
+              <h4>Lucío Mendoza</h4>
+              <span>Ingeniería de Software</span>
             </div>
           </div>
+          <p class="texto">"Tomar el curso de Desarrollo Web Full Stack en UTP Academia me abrió las puertas para conseguir mis prácticas pre-profesionales. ¡Excelente metodología!"</p>
+          <div class="estrellas">★★★★★</div>
         </div>
-      </section>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h4>Academia UTP</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
-            Plataforma académica y de desarrollo tecnológico exclusiva para
-            estudiantes.
-          </p>
+        <div class="tarjeta-testimonio">
+          <div class="cabecera-testimonio">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop" alt="Carlos Ramírez" class="foto-testimonio">
+            <div class="estrellas">★★★★★</div>
+            <div>
+              <h4>Carlos Ramírez</h4>
+              <span>Administración de Empresas</span>
+            </div>
+          </div>
+          <p class="texto">"El curso de Marketing Digital complementó perfectamente mi carrera. Las clases son dinámicas y los profesores tienen experiencia real en la industria."</p>
+          <div class="estrellas">★★★★★</div>
         </div>
-        <div class="footer-col">
-          <h4>Enlaces Útiles</h4>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Catálogo de Cursos</a></li>
-            <li><a href="contacto.html">Inscripción</a></li>
-          </ul>
+
+        <div class="tarjeta-testimonio">
+          <div class="cabecera-testimonio">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop" alt="María Fernández" class="foto-testimonio">
+            <div>
+              <h4>Maria Fernandez</h4>
+              <span>Diseño Grafico</span>
+            </div>
+          </div>
+          <p class="texto">"Gracias al curso de Diseño Gráfico ahora tengo mi propio portafolio y he conseguido proyectos freelance. ¡Totalmente recomendado!"</p>
+          <div class="estrellas">★★★★★</div>
         </div>
-        <div class="footer-col">
-          <h4>Soporte</h4>
-          <ul>
-            <li><a href="contacto.html">Contáctanos</a></li>
-            <li><a href="tabla.html">Directorio Académico</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contacto</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
-            Lima, Perú<br />Tel: (01) 3159-610<br />contacto@academiatp.edu.pe
-          </p>
-        </div>
+
       </div>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 Academia UTP. Desarrollado por
-          <span
-            ><a
-              href="https://github.com/Unk4won"
-              style="color: var(--color-primary)"
-            >
-              Unk4won
-            </a></span
-          >
-        </p>
+    </section>
+
+    <!-----Llamada a la accion----->
+    <section class="cta">
+      <div class="cta-contenido">
+        <h2>¿Quieres inscribirte a un curso?</h2>
+        <p>Completa tu registro en pocos minutos y comienza a transformar tu futuro profesional.</p>
+        <a href="registro.html" class="boton boton-blanco">Ir al Registro</a>
       </div>
-    </footer>
-  </body>
+    </section>
+
+  </main>
+
+  <!-----Pie de pagina----->
+  <footer class="pie-pagina">
+    <div class="contenedor-pie">
+      <div class="columna-pie">
+        <h4>UTP Academia</h4>
+        <p>Plataforma académica y de desarrollo tecnológico exclusiva para estudiantes de la UTP.</p>
+      </div>
+      <div class="columna-pie">
+        <h4>Enlaces Útiles</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Catálogo de Cursos</a></li>
+          <li><a href="registro.html">Registro</a></li>
+        </ul>
+      </div>
+      <div class="columna-pie">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="contacto.html">Contáctanos</a></li>
+          <li><a href="tabla.html">Directorio Académico</a></li>
+        </ul>
+      </div>
+      <div class="columna-pie">
+        <h4>Contacto</h4>
+        <p>Lima, Perú<br>Teléfono: (01) 3159-610<br>Correo: contacto@utpacademia.edu.pe</p>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>&copy; 2026 UTP Academia - Taller de Programación Web Grupo 07. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
 </html>
+

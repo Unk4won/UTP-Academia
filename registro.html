@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTP Academia - Registro de Estudiantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikXUz4q4Eh_yL8mUK3vglmkvZxW5pKpzDWf_OQTIE0XQ2OrG_S_ambnJJ&s=10" type="image/png">
+</head>
+<body>
+
+  <!-----Encabezado y menu----->
+  <header class="encabezado">
+    <div class="contenedor-encabezado">
+      <a href="index.html" class="logo">
+        <span class="logo-caja">U</span>
+        <span class="logo-caja">T</span>
+        <span class="logo-caja">P</span>
+        <span class="logo-mas">+</span>
+        <span class="logo-texto">Academia</span>
+      </a>
+      <nav>
+        <ul class="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="registro.html" class="activo">Registro</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="tabla.html">Tabla</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-----Contenido principal----->
+  <main>
+
+    <!-----Banner interior----->
+    <section class="banner-interior">
+      <h1>Registro de Estudiantes</h1>
+      <p>Completa el formulario para inscribirte en los cursos de UTP Academia.</p>
+    </section>
+
+    <!-----Seccion del formulario de registro----->
+    <section class="contacto">
+      <div class="grid-contacto" style="grid-template-columns: 1.2fr 0.8fr;">
+
+        <!-----Columna 1: Formulario de registro----->
+        <div class="carta-contacto">
+          <h2>Formulario de Inscripción</h2>
+
+          <form id="formularioRegistro" action="#" method="POST">
+
+            <!-----Nombre completo----->
+            <div class="grupo-formulario">
+              <label for="nombre" class="etiqueta">Nombre Completo: </label>
+              <input type="text" id="nombre" name="nombre" class="campo"
+                     placeholder="Ej. Juan Pérez García" required
+                     minlength="3" maxlength="50"
+                     pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
+                     title="Solo letras y espacios (mínimo 3 caracteres)">
+              <p class="texto-ayuda">Solo letras, mínimo 3 caracteres.</p>
+            </div>
+
+            <!-----Dni y num de celular----->
+            <div class="fila-dos">
+              <div class="grupo-formulario">
+                <label for="dni" class="etiqueta">DNI: </label>
+                <input type="text" id="dni" name="dni" class="campo"
+                       placeholder="8 dígitos" required
+                       minlength="8" maxlength="8"
+                       pattern="[0-9]{8}"
+                       title="El DNI debe tener exactamente 8 dígitos numéricos">
+                <p class="texto-ayuda">Exactamente 8 dígitos numéricos.</p>
+              </div>
+              <div class="grupo-formulario">
+                <label for="celular" class="etiqueta">Número de celular: </label>
+                <input type="cel" id="celular" name="celular" class="campo"
+                       placeholder="9 dígitos" required
+                       minlength="9" maxlength="9"
+                       pattern="[0-9]{9}"
+                       title="Ingresa 9 dígitos numéricos (ej. 991234561)">
+                <p class="texto-ayuda">Solo números, 9 dígitos.</p>
+              </div>
+            </div>
+
+            <!-----Correo electronico----->
+            <div class="grupo-formulario">
+              <label for="email" class="etiqueta">Correo Electrónico: </label>
+              <input type="email" id="email" name="email" class="campo"
+                     placeholder="tu@email.com" required>
+            </div>
+
+            <!-----Genero----->
+            <div class="grupo-formulario">
+              <label class="etiqueta">Genero: </label>
+              <div class="grupo-opciones">
+                <label class="opcion">
+                  <input type="radio" name="genero" value="masculino" required> Masculino
+                </label>
+                <label class="opcion">
+                  <input type="radio" name="genero" value="femenino"> Femenino
+                </label>
+                <label class="opcion">
+                  <input type="radio" name="genero" value="otro"> Otro
+                </label>
+              </div>
+            </div>
+
+            <!-----Pais----->
+            <div class="grupo-formulario">
+              <label for="pais" class="etiqueta">País: </label>
+              <select id="pais" name="pais" class="campo" required>
+                <option value="" disabled selected>Selecciona tu país</option>
+                <option value="peru">Perú</option>
+                <option value="argentina">Argentina</option>
+                <option value="bolivia">Bolivia</option>
+                <option value="chile">Chile</option>
+                <option value="colombia">Colombia</option>
+                <option value="ecuador">Ecuador</option>
+                <option value="mexico">México</option>
+                <option value="españa">España</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <!-----Cursos de interes----->
+            <div class="grupo-formulario">
+              <label class="etiqueta">Cursos de Interés (opción múltiple): </label>
+              <div class="grupo-opciones">
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="python"> Python Básico
+                </label>
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="web"> Desarrollo Web
+                </label>
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="diseno"> Diseño Gráfico
+                </label>
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="marketing"> Marketing Digital
+                </label>
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="ingles"> Inglés Empresarial
+                </label>
+                <label class="opcion">
+                  <input type="checkbox" name="cursos" value="negocios"> Transformación Digital
+                </label>
+              </div>
+              <p class="texto-ayuda">Marca al menos un curso de tu interes.</p>
+            </div>
+
+            <!-----Recomendacion----->
+            <div class="grupo-formulario">
+              <label for="opinion" class="etiqueta">Recomendación / Opinión:  </label>
+              <textarea id="opinion" name="opinion" class="campo"
+                        placeholder="Cuéntanos por qué quieres estudiar en UTP Academia o qué esperas de nuestros cursos..."
+                        required minlength="10" maxlength="500"></textarea>
+              <p class="texto-ayuda">Mínimo 10 caracteres, máximo 500 </p>
+            </div>
+
+            <button type="submit" class="boton-enviar">Enviar Registro </button>
+
+          </form>
+
+          <!-----Mensaje de enviado correrctamente----->
+          <div id="mensajeExito" style="display:none; margin-top:20px; padding:16px; background-color:#d1fae5; color:#065f46; border-radius:8px; text-align:center; font-weight:600;">
+            ✅ ¡Registro enviado correctamente! Gracias por inscribirte en nuestra UTP Academia. :)
+          </div>
+
+        </div>
+
+        <!-----Columna2: Informacion adicional----->
+        <div class="carta-contacto">
+          <h2>¿Por qué registrarte?</h2>
+
+          <div class="item-info">
+            <div class="icono">🎯</div>
+            <div>
+              <h3>Acceso Exclusivo</h3>
+              <p>Al registrarte obtienes acceso a materiales, plataformas y beneficios exclusivos para estudiantes.</p>
+            </div>
+          </div>
+
+          <div class="item-info">
+            <div class="icono">📚</div>
+            <div>
+              <h3>Certificados</h3>
+              <p>Al finalizar cada curso recibirás un certificado oficial que respalda tus conocimientos.</p>
+            </div>
+          </div>
+
+          <div class="item-info">
+            <div class="icono">🤝</div>
+            <div>
+              <h3>Comunidad</h3>
+              <p>Únete a una comunidad de estudiantes y profesionales que comparten tus mismos intereses.</p>
+            </div>
+          </div>
+
+          <div class="item-info">
+            <div class="icono">📞</div>
+            <div>
+              <h3>¿Tienes dudas?</h3>
+              <p>Escríbenos a <a href="mailto:contacto@utpacademia.edu.pe">contacto@utpacademia.edu.pe</a> o visítanos en la página de <a href="contacto.html" style="color:var(--rojo); font-weight:600;">Contacto</a>.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-----Pie de pagina----->
+  <footer class="pie-pagina">
+    <div class="contenedor-pie">
+      <div class="columna-pie">
+        <h4>UTP Academia</h4>
+        <p>Plataforma académica y de desarrollo tecnológico exclusiva para estudiantes de la UTP.</p>
+      </div>
+      <div class="columna-pie">
+        <h4>Enlaces Útiles</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="servicios.html">Catálogo de Cursos</a></li>
+          <li><a href="registro.html">Registro</a></li>
+        </ul>
+      </div>
+      <div class="columna-pie">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="contacto.html">Contáctanos</a></li>
+          <li><a href="tabla.html">Directorio Académico</a></li>
+        </ul>
+      </div>
+      <div class="columna-pie">
+        <h4>Contacto</h4>
+        <p>Lima, Perú<br>Teléfono: (01) 3159-610<br>Correo: contacto@utpacademia.edu.pe</p>
+      </div>
+    </div>
+    <div class="pie-inferior">
+      <p>&copy; 2026 UTP Academia - Taller de Programación Web Grupo 7. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

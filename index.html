@@ -3,108 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academia UTP - Inicio</title>
-    <!-- Google Fonts: Poppins y Open Sans -->
+    <title>UTP Academia - Inicio</title>
+    <!-----Fuentes de google----->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="estilo.css" />
+    <link
+      rel="icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikXUz4q4Eh_yL8mUK3vglmkvZxW5pKpzDWf_OQTIE0XQ2OrG_S_ambnJJ&s=10"
+      type="image/png"
+    />
   </head>
   <body>
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header class="site-header">
-      <div class="header-container">
-        <a href="index.html" class="logo-utp">
-          <span class="utp-box">U</span>
-          <span class="utp-box">T</span>
-          <span class="utp-box">P</span>
-          <span class="utp-plus">+</span>
-          <span class="utp-text">Academia</span>
+    <!-----Encabezado y menu----->
+    <header class="encabezado">
+      <div class="contenedor-encabezado">
+        <a href="index.html" class="logo">
+          <span class="logo-caja">U</span>
+          <span class="logo-caja">T</span>
+          <span class="logo-caja">P</span>
+          <span class="logo-mas">+</span>
+          <span class="logo-texto">Academia</span>
         </a>
         <nav>
-          <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Inicio</a></li>
-            <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-            <li><a href="tabla.html" class="nav-link">Tabla</a></li>
+          <ul class="menu">
+            <li><a href="index.html" class="activo">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="tabla.html">Tabla</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <!-- CONTENIDO PRINCIPAL -->
+    <!-----Contenido principal----->
     <main>
-      <!-- HERO SECTION -->
-      <section class="hero-section">
-        <div class="hero-container">
-          <div class="hero-content">
-            <h1>Forma tu Futuro en Academia UTP</h1>
+      <!-----Seccion de encabezado----->
+      <section class="hero">
+        <div class="contenedor-hero">
+          <div class="hero-texto">
+            <h1>Forma tu Futuro en UTP Academia</h1>
             <p>
-              Educación de excelencia con enfoque tecnológico diseñado
-              exclusivamente para impulsar el potencial de nuestros estudiantes.
+              Educación de excelencia con enfoque tecnológico, diseñada para
+              impulsar el potencial de nuestros estudiantes y prepararlos para
+              el mundo laboral.
             </p>
-            <a href="servicios.html" class="btn-primary">Explora Cursos</a>
+            <a href="servicios.html" class="boton boton-rojo"
+              >Explora Nuestros Cursos</a
+            >
           </div>
-          <div class="hero-image-wrapper">
+          <div class="hero-imagen">
             <img
-              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=600&auto=format&fit=crop"
-              alt="Estudiantes en clase de Academia UTP"
+              src="https://www.udep.edu.pe/hoy/wp-content/uploads/sites/49/2017/05/Curso-suso-de-software-dinamica-computacional-1.jpg"
+              alt="Estudiantes en clase de UTP Academia"
             />
           </div>
         </div>
       </section>
 
-      <!-- SECCIÓN ¿POR QUÉ ACADEMIA UTP? -->
-      <section class="features-section">
-        <h2 class="section-title">¿Por qué Academia UTP?</h2>
-        <div class="features-grid">
-          <article class="feature-card">
-            <div class="feature-icon">🎓</div>
+      <!-----Seccion: Por que UTP Academia----->
+      <section class="caracteristicas">
+        <h2 class="titulo-seccion">¿Por qué elegir UTP Academia?</h2>
+        <div class="grid-caracteristicas">
+          <article class="tarjeta-caracteristica">
+            <div class="icono">🎓</div>
             <h3>Docentes Expertos</h3>
             <p>
-              Nuestro equipo está compuesto por profesionales con más de 10 años
-              de experiencia en industria.
+              Profesionales con más de 10 años de experiencia en la industria
+              tecnológica y académica.
             </p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">⏳</div>
-            <h3>Modalidades Flexibles</h3>
+          <article class="tarjeta-caracteristica">
+            <div class="icono">⏰</div>
+            <h3>Horarios Flexibles</h3>
             <p>
-              Estudia en tu horario: Presencial, Semipresencial o 100% Virtual
-              adaptado a tu ritmo.
+              Estudia a tu ritmo: modalidad presencial, semipresencial o 100%
+              virtual adaptada a ti.
             </p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">💼</div>
-            <h3>Empleabilidad Garantizada</h3>
+          <article class="tarjeta-caracteristica">
+            <div class="icono">💼</div>
+            <h3>Alta Empleabilidad</h3>
             <p>
-              El 85% de nuestros egresados consiguen empleo en los primeros 3
-              meses tras finalizar.
+              El 85% de nuestros egresados consigue trabajo en los primeros 3
+              meses después de graduarse.
             </p>
           </article>
-          <article class="feature-card">
-            <div class="feature-icon">💻</div>
+          <article class="tarjeta-caracteristica">
+            <div class="icono">💻</div>
             <h3>Tecnología de Punta</h3>
             <p>
-              Acceso a plataformas de última generación y herramientas
-              profesionales del mercado actual.
+              Acceso a plataformas modernas y herramientas profesionales usadas
+              en el mercado actual.
             </p>
           </article>
         </div>
       </section>
 
-      <section class="video-section">
-        <div class="video-container-wrapper">
-          <h2 class="section-title">Conoce Nuestra Academia UTP</h2>
-          <p class="video-subtitle">
-            Vive la experiencia de una educación superior moderna y tecnológica
+      <!-----Seccion de Video----->
+      <section class="seccion-video">
+        <div class="contenedor-video">
+          <h2 class="titulo-seccion">Conoce Nuestra Academia</h2>
+          <p>
+            Vive la experiencia de una educación superior moderna y tecnológica.
           </p>
-
-          <div class="video-container">
-            <video autoplay muted loop>
+          <div class="caja-video">
+            <!-----Video de presentacion----->
+            <video autoplay muted loop controls>
               <source
                 src="resources/media/video_promocion_index.mp4"
                 type="video/mp4"
@@ -115,86 +125,107 @@
         </div>
       </section>
 
-      <!-- --- SECCIÓN DE AUDIO INSTITUCIONAL --- -->
-      <section class="audio-section">
-        <div class="audio-container-wrapper">
-          <h3 class="section-subtitle">Nuestra Promesa</h3>
-          <p class="audio-narration-text">
-            "En Academia UTP creemos que tu futuro no está limitado.<br />
-            Creemos que tienes el potencial de transformar tus sueños<br />
-            en realidad, por eso estamos aquí."
+      <!-----Seccion de Audio----->
+      <section class="seccion-audio">
+        <div class="caja-audio">
+          <h3>Nuestra Promesa</h3>
+          <p class="frase">
+            "En UTP Academia creemos que tu futuro no está limitado. Creemos que
+            tienes el potencial de transformar tus sueños en realidad, por eso
+            estamos aquí."
           </p>
-
-          <div class="audio-player-container">
-            <audio controls>
-              <source
-                src="resources/media/audio_presentacion.mp3"
-                type="audio/mpeg"
-              />
-              Tu navegador no soporta el elemento de audio.
-            </audio>
-          </div>
+          <audio controls>
+            <source
+              src="resources/media/audio_presentacion.wav"
+              type="audio/wav"
+            />
+            Tu navegador no soporta el elemento de audio.
+          </audio>
         </div>
       </section>
-      <!-- CURSOS DESTACADOS -->
-      <section class="courses-section">
-        <div class="courses-container">
-          <h2 class="section-title">Nuestros Cursos Más Populares</h2>
-          <div class="courses-grid">
-            <!-- Curso 1 -->
-            <article class="course-card">
-              <img
-                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop"
-                alt="Python Básico"
-                class="course-img"
-              />
-              <div class="course-body">
+
+      <!-----Seccion Cursos Populares----->
+      <section class="cursos">
+        <div class="contenedor-cursos">
+          <h2 class="titulo-seccion">Nuestros Cursos Más Populares</h2>
+          <div class="grid-cursos">
+            <article class="tarjeta-curso">
+              <div class="imagen-curso">
+                <img
+                  src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop"
+                  alt="Curso de Python Básico"
+                />
+                <span class="etiqueta-curso">Programación</span>
+              </div>
+              <div class="cuerpo-curso">
                 <h3>Python Básico</h3>
                 <p>
                   Domina los fundamentos de Python, el lenguaje más versátil
-                  para iniciar en el mundo de la programación.
+                  para iniciar en programación.
                 </p>
-                <div class="course-footer">
-                  <span class="course-duration">Duración: 8 semanas</span>
-                  <a href="servicios.html" class="btn-secondary">Ver Más</a>
+                <div class="datos-curso">
+                  <span>Duración: 8 semanas</span>
+                  <span>Nivel: Principiante</span>
+                </div>
+                <div class="pie-curso">
+                  <span class="destacado">Exclusivo Estudiantes</span>
+                  <a href="registro.html" class="boton boton-negro"
+                    >Inscribirse</a
+                  >
                 </div>
               </div>
             </article>
-            <!-- Curso 2 -->
-            <article class="course-card">
-              <img
-                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
-                alt="Diseño Gráfico Profesional"
-                class="course-img"
-              />
-              <div class="course-body">
+
+            <article class="tarjeta-curso">
+              <div class="imagen-curso">
+                <img
+                  src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
+                  alt="Curso de Diseño Gráfico"
+                />
+                <span class="etiqueta-curso">Diseño</span>
+              </div>
+              <div class="cuerpo-curso">
                 <h3>Diseño Gráfico Profesional</h3>
                 <p>
-                  Aprende diseño visual con Adobe Creative Suite. Crea
-                  identidades visuales y material moderno.
+                  Aprende diseño visual con herramientas profesionales. Crea
+                  identidades visuales modernas.
                 </p>
-                <div class="course-footer">
-                  <span class="course-duration">Duración: 10 semanas</span>
-                  <a href="servicios.html" class="btn-secondary">Ver Más</a>
+                <div class="datos-curso">
+                  <span>Duración: 10 semanas</span>
+                  <span>Nivel: Principiante</span>
+                </div>
+                <div class="pie-curso">
+                  <span class="destacado">Exclusivo Estudiantes</span>
+                  <a href="registro.html" class="boton boton-negro"
+                    >Inscribirse</a
+                  >
                 </div>
               </div>
             </article>
-            <!-- Curso 3 -->
-            <article class="course-card">
-              <img
-                src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop"
-                alt="Marketing Digital"
-                class="course-img"
-              />
-              <div class="course-body">
+
+            <article class="tarjeta-curso">
+              <div class="imagen-curso">
+                <img
+                  src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop"
+                  alt="Curso de Marketing Digital"
+                />
+                <span class="etiqueta-curso">Marketing</span>
+              </div>
+              <div class="cuerpo-curso">
                 <h3>Marketing Digital</h3>
                 <p>
-                  Domina estrategias de marketing digital, SEO, publicidad en
-                  redes sociales y analítica web.
+                  Domina estrategias digitales, SEO, publicidad en redes
+                  sociales y analítica web.
                 </p>
-                <div class="course-footer">
-                  <span class="course-duration">Duración: 8 semanas</span>
-                  <a href="servicios.html" class="btn-secondary">Ver Más</a>
+                <div class="datos-curso">
+                  <span>Duración: 8 semanas</span>
+                  <span>Nivel: Principiante</span>
+                </div>
+                <div class="pie-curso">
+                  <span class="destacado">Exclusivo Estudiantes</span>
+                  <a href="registro.html" class="boton boton-negro"
+                    >Inscribirse</a
+                  >
                 </div>
               </div>
             </article>
@@ -202,62 +233,58 @@
         </div>
       </section>
 
-      <!-- LLAMADA A LA ACCIÓN (CTA SECTION) -->
-      <section class="cta-section">
-        <div class="cta-container">
+      <!-----Seccion Llamada a la Accion----->
+      <section class="cta">
+        <div class="cta-contenido">
           <h2>¿Listo para transformar tu carrera?</h2>
           <p>
-            Únete a nuestra comunidad exclusiva de estudiantes y potencia tu
-            futuro profesional hoy mismo.
+            Únete a nuestra comunidad de estudiantes y potencia tu futuro
+            profesional hoy mismo.
           </p>
-          <a href="contacto.html" class="btn-light">Inscribirse Ahora</a>
+          <a href="registro.html" class="boton boton-blanco"
+            >Registrarme Ahora</a
+          >
         </div>
       </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h4>Academia UTP</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
+    <!-----Pie de pagina----->
+    <footer class="pie-pagina">
+      <div class="contenedor-pie">
+        <div class="columna-pie">
+          <h4>UTP Academia</h4>
+          <p>
             Plataforma académica y de desarrollo tecnológico exclusiva para
-            estudiantes.
+            estudiantes de la UTP.
           </p>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Enlaces Útiles</h4>
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Catálogo de Cursos</a></li>
-            <li><a href="contacto.html">Inscripción</a></li>
+            <li><a href="registro.html">Registro</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Soporte</h4>
           <ul>
             <li><a href="contacto.html">Contáctanos</a></li>
             <li><a href="tabla.html">Directorio Académico</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Contacto</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
-            Lima, Perú<br />Tel: (01) 3159-610<br />contacto@academiatp.edu.pe
+          <p>
+            Lima, Perú<br />Teléfono: (01) 3159-610<br />Correo:
+            contacto@utpacademia.edu.pe
           </p>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="pie-inferior">
         <p>
-          &copy; 2026 Academia UTP. Desarrollado por
-          <span
-            ><a
-              href="https://github.com/Unk4won"
-              style="color: var(--color-primary)"
-            >
-              Unk4won
-            </a></span
-          >
+          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7. Todos
+          los derechos reservados.
         </p>
       </div>
     </footer>

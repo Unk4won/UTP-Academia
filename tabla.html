@@ -3,40 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Academia UTP - Directorio Académico</title>
+    <title>UTP Academia - Directorio Académico</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="estilo.css" />
+    <link
+      rel="icon"
+      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikXUz4q4Eh_yL8mUK3vglmkvZxW5pKpzDWf_OQTIE0XQ2OrG_S_ambnJJ&s=10"
+      type="image/png"
+    />
   </head>
   <body>
-    <!-- HEADER Y NAVEGACIÓN -->
-    <header class="site-header">
-      <div class="header-container">
-        <a href="index.html" class="logo-utp">
-          <span class="utp-box">U</span>
-          <span class="utp-box">T</span>
-          <span class="utp-box">P</span>
-          <span class="utp-plus">+</span>
-          <span class="utp-text">Academia</span>
+    <!-----Encabezado y menu----->
+    <header class="encabezado">
+      <div class="contenedor-encabezado">
+        <a href="index.html" class="logo">
+          <span class="logo-caja">U</span>
+          <span class="logo-caja">T</span>
+          <span class="logo-caja">P</span>
+          <span class="logo-mas">+</span>
+          <span class="logo-texto">Academia</span>
         </a>
         <nav>
-          <ul class="nav-menu">
-            <li><a href="index.html" class="nav-link">Inicio</a></li>
-            <li><a href="servicios.html" class="nav-link">Servicios</a></li>
-            <li><a href="contacto.html" class="nav-link">Contacto</a></li>
-            <li><a href="tabla.html" class="nav-link">Tabla</a></li>
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="tabla.html" class="activo">Tabla</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
+    <!-----Contenido principal----->
+
     <main>
-      <!-- BANNER INTERIOR -->
-      <section class="inner-banner">
+      <!----- Banner interior------>
+      <section class="banner-interior">
         <h1>Directorio Académico</h1>
         <p>
           Consulta el estado actual de nuestros programas y asignaturas
@@ -44,22 +52,22 @@
         </p>
       </section>
 
-      <!-- SECCIÓN DE TABLA -->
-      <section class="table-section">
-        <div class="table-intro">
+      <!-----Seccion de tabla----->
+      <section class="seccion-tabla">
+        <div class="intro-tabla">
           <h2>Programación de Cursos y Módulos</h2>
           <p>
             Listado oficial de cursos activos y próximos ciclos académicos
-            diseñados exclusivamente para estudiantes de la Academia UTP.
+            diseñados para estudiantes de UTP Academia.
           </p>
         </div>
 
-        <div class="table-responsive-wrapper">
-          <table class="academic-table">
+        <div class="caja-tabla">
+          <table class="tabla-academica">
             <thead>
               <tr>
                 <th>Código</th>
-                <th>Curso</th>
+                <th>Curso / Asignatura</th>
                 <th>Área</th>
                 <th>Duración</th>
                 <th>Nivel</th>
@@ -68,106 +76,121 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>UTP-101</strong></td>
+                <td class="codigo">UTP-101</td>
                 <td>Python Básico</td>
                 <td>Programación</td>
                 <td>8 semanas</td>
                 <td>Principiante</td>
-                <td><span class="badge-status badge-active">Activo</span></td>
+                <td><span class="estado estado-activo">Activo</span></td>
               </tr>
               <tr>
-                <td><strong>UTP-102</strong></td>
+                <td class="codigo">UTP-102</td>
                 <td>Desarrollo Web Full Stack</td>
                 <td>Programación</td>
                 <td>12 semanas</td>
                 <td>Intermedio</td>
-                <td><span class="badge-status badge-active">Activo</span></td>
+                <td><span class="estado estado-activo">Activo</span></td>
               </tr>
               <tr>
-                <td><strong>UTP-201</strong></td>
+                <td class="codigo">UTP-201</td>
                 <td>Diseño Gráfico Profesional</td>
                 <td>Diseño</td>
                 <td>10 semanas</td>
                 <td>Principiante</td>
-                <td><span class="badge-status badge-active">Activo</span></td>
+                <td><span class="estado estado-activo">Activo</span></td>
               </tr>
               <tr>
-                <td><strong>UTP-301</strong></td>
+                <td class="codigo">UTP-301</td>
                 <td>Marketing Digital y Social Media</td>
                 <td>Marketing</td>
                 <td>8 semanas</td>
                 <td>Principiante</td>
                 <td>
-                  <span class="badge-status badge-upcoming">Próximo Ciclo</span>
+                  <span class="estado estado-proximo">Próximo Ciclo</span>
                 </td>
               </tr>
               <tr>
-                <td><strong>UTP-401</strong></td>
+                <td class="codigo">UTP-401</td>
                 <td>Inglés Empresarial</td>
                 <td>Idiomas</td>
                 <td>16 semanas</td>
                 <td>Intermedio</td>
-                <td><span class="badge-status badge-active">Activo</span></td>
+                <td><span class="estado estado-activo">Activo</span></td>
               </tr>
               <tr>
-                <td><strong>UTP-501</strong></td>
+                <td class="codigo">UTP-501</td>
                 <td>Transformación Digital</td>
                 <td>Negocios</td>
                 <td>6 semanas</td>
                 <td>Principiante</td>
                 <td>
-                  <span class="badge-status badge-upcoming">Próximo Ciclo</span>
+                  <span class="estado estado-proximo">Próximo Ciclo</span>
                 </td>
+              </tr>
+              <tr>
+                <td class="codigo">UTP-601</td>
+                <td>Base de Datos con MySQL</td>
+                <td>Programación</td>
+                <td>8 semanas</td>
+                <td>Intermedio</td>
+                <td><span class="estado estado-activo">Activo</span></td>
               </tr>
             </tbody>
           </table>
         </div>
       </section>
+
+      <!-----Llamada a la accion----->
+      <section class="cta">
+        <div class="cta-contenido">
+          <h2>¿Encontraste el curso ideal?</h2>
+          <p>
+            Regístrate ahora y asegura tu vacante en el próximo ciclo académico.
+          </p>
+          <a href="registro.html" class="boton boton-blanco"
+            >Registrarme Ahora</a
+          >
+        </div>
+      </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h4>Academia UTP</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
+    <!-----Pie de pagina----->
+    <footer class="pie-pagina">
+      <div class="contenedor-pie">
+        <div class="columna-pie">
+          <h4>UTP Academia</h4>
+          <p>
             Plataforma académica y de desarrollo tecnológico exclusiva para
-            estudiantes.
+            estudiantes de la UTP.
           </p>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Enlaces Útiles</h4>
           <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Catálogo de Cursos</a></li>
-            <li><a href="contacto.html">Inscripción</a></li>
+            <li><a href="registro.html">Registro</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Soporte</h4>
           <ul>
             <li><a href="contacto.html">Contáctanos</a></li>
             <li><a href="tabla.html">Directorio Académico</a></li>
           </ul>
         </div>
-        <div class="footer-col">
+        <div class="columna-pie">
           <h4>Contacto</h4>
-          <p style="font-size: 0.9rem; color: #ccc">
-            Lima, Perú<br />Tel: (01) 3159-610<br />contacto@academiatp.edu.pe
+          <p>
+            Lima, Perú<br />Teléfono: (01) 3159-610<br />Correo:
+            contacto@utpacademia.edu.pe
           </p>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="pie-inferior">
         <p>
-          &copy; 2026 Academia UTP. Desarrollado por
-          <span
-            ><a
-              href="https://github.com/Unk4won"
-              style="color: var(--color-primary)"
-            >
-              Unk4won
-            </a></span
-          >
+          &copy; 2026 UTP Academia - Taller de Programación Web Grupo 7. Todos
+          los derechos reservados.
         </p>
       </div>
     </footer>

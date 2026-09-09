@@ -1,0 +1,904 @@
+/*Aqui hare los estilos para mi pagina web*/
+
+/*1. VARIABLES DE COLOR*/
+:root {
+  --rojo: #cc0000;          /* Rojo UTP */
+  --rojo-oscuro: #990000;   /* Rojo oscuro para hover */
+  --negro: #000000;
+  --blanco: #ffffff;
+  --gris-claro: #f5f5f5;
+  --gris-borde: #d9d9d9;
+  --gris-texto: #333333;
+  --gris-suave: #707070;
+}
+
+/*2. ESTILOS GENERALES*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  color: var(--gris-texto);
+  background-color: var(--blanco);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*3. ENCABEZADO Y MENU DE NAVEGACION*/
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--blanco);
+  border-bottom: 2px solid var(--rojo);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contenedor-encabezado {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*Logo UTP*/
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.logo-caja {
+  background-color: var(--negro);
+  color: var(--blanco);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  border-radius: 3px;
+}
+
+.logo-mas {
+  color: var(--rojo);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 4px;
+}
+
+.logo-texto {
+  color: var(--negro);
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+}
+
+/*Menu de navegacion*/
+.menu {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  align-items: center;
+}
+
+.menu a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--negro);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+/*Enlace de la pagina*/
+.menu a.activo {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+/*4. BANNER INTERIOR*/
+.banner-interior {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  padding: 50px 24px;
+  text-align: center;
+}
+
+.banner-interior h1 {
+  font-size: 2.4rem;
+  margin-bottom: 8px;
+}
+
+.banner-interior p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+}
+
+/*5. SECCION PRINCIPAL de la pag. index,html*/
+.hero {
+  padding: 60px 24px;
+  background: linear-gradient(135deg, rgba(204,0,0,0.06) 0%, var(--blanco) 100%);
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+.contenedor-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-texto h1 {
+  font-size: 2.6rem;
+  color: var(--rojo);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-texto p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+}
+
+.hero-imagen img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/*6. BOTONES*/
+.boton {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton-rojo {
+  background-color: var(--rojo);
+  color: var(--blanco);
+}
+
+.boton-rojo:hover {
+  background-color: var(--negro);
+  transform: translateY(-2px);
+}
+
+.boton-negro {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.boton-negro:hover {
+  background-color: var(--rojo);
+}
+
+.boton-blanco {
+  background-color: var(--blanco);
+  color: var(--rojo);
+  font-weight: 700;
+}
+
+.boton-blanco:hover {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/*7. TITULOS DE SECCION*/
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--negro);
+  margin-bottom: 40px;
+}
+
+/*8. SECCION "POR QUE UTP ACADEMIA"*/
+.caracteristicas {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta-caracteristica {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-caracteristica:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-color: var(--rojo);
+}
+
+.tarjeta-caracteristica .icono {
+  font-size: 2.4rem;
+  margin-bottom: 14px;
+}
+
+.tarjeta-caracteristica h3 {
+  font-size: 1.15rem;
+  color: var(--negro);
+  margin-bottom: 10px;
+}
+
+.tarjeta-caracteristica p {
+  font-size: 0.95rem;
+  color: var(--gris-suave);
+}
+
+/*9. SECCION DE VIDEO */
+.seccion-video {
+  padding: 60px 24px;
+  background-color: var(--blanco);
+  border-top: 1px solid var(--gris-borde);
+  border-bottom: 1px solid var(--gris-borde);
+  text-align: center;
+}
+
+.contenedor-video {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contenedor-video p {
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+  color: var(--gris-suave);
+}
+
+.caja-video {
+  background-color: var(--negro);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.caja-video video {
+  width: 100%;
+  display: block;
+}
+
+/*10. SECCION DE AUDIO*/
+.seccion-audio {
+  padding: 50px 24px;
+  background-color: var(--gris-claro);
+  text-align: center;
+}
+
+.caja-audio {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.caja-audio h3 {
+  color: var(--rojo);
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+}
+
+.caja-audio .frase {
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 22px;
+  line-height: 1.8;
+}
+
+.caja-audio audio {
+  width: 100%;
+  max-width: 500px;
+}
+
+/*11. SECCION DE CURSOS de las pag.index y servicios*/
+.cursos {
+  padding: 60px 24px;
+  background-color: var(--gris-claro);
+  border-top: 1px solid var(--gris-borde);
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+.contenedor-cursos {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta-curso {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-curso:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
+
+.tarjeta-curso .imagen-curso {
+  position: relative;
+}
+
+.tarjeta-curso img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.etiqueta-curso {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.cuerpo-curso {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cuerpo-curso h3 {
+  color: var(--rojo);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.cuerpo-curso p {
+  font-size: 0.95rem;
+  color: var(--gris-suave);
+  margin-bottom: 14px;
+  flex-grow: 1;
+}
+
+.datos-curso {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--gris-suave);
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.pie-curso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--gris-claro);
+}
+
+.pie-curso .destacado {
+  font-weight: 700;
+  color: var(--rojo);
+  font-size: 0.85rem;
+}
+
+/*12. FILTROS DE CURSOS de la pag.servicios.html*/
+.filtros {
+  padding: 30px 24px 10px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.boton-filtro {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  color: var(--gris-texto);
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.boton-filtro:hover,
+.boton-filtro.activo {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  border-color: var(--rojo);
+}
+
+/*13. TESTIMONIOS de la pag.servicios.html*/
+.testimonios {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.tarjeta-testimonio {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-left: 4px solid var(--rojo);
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.cabecera-testimonio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.foto-testimonio {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rojo);
+}
+
+.cabecera-testimonio h4 {
+  font-size: 1.05rem;
+  color: var(--negro);
+}
+
+.cabecera-testimonio span {
+  font-size: 0.85rem;
+  color: var(--gris-suave);
+}
+
+.tarjeta-testimonio .texto {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 14px;
+}
+
+.estrellas {
+  color: #f5b301;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+/*14. LLAMADA A LA ACCION */
+.cta {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  padding: 50px 24px;
+  text-align: center;
+}
+
+.cta-contenido {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+/*15. CONTACTO de la pag.contacto.html */
+.contacto {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.carta-contacto {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  padding: 32px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.carta-contacto h2 {
+  font-size: 1.6rem;
+  color: var(--rojo);
+  margin-bottom: 24px;
+}
+
+.item-info {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+  align-items: flex-start;
+}
+
+.item-info .icono {
+  font-size: 1.5rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.item-info h3 {
+  font-size: 1.05rem;
+  color: var(--negro);
+  margin-bottom: 4px;
+}
+
+.item-info p, .item-info a {
+  font-size: 0.95rem;
+  color: var(--gris-suave);
+}
+
+.item-info a:hover {
+  color: var(--rojo);
+  text-decoration: underline;
+}
+
+/*16. FORMULARIOS de las pags. contacto y registro */
+.grupo-formulario {
+  margin-bottom: 20px;
+}
+
+.etiqueta {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--negro);
+  margin-bottom: 8px;
+}
+
+.campo {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.95rem;
+  color: var(--gris-texto);
+  background-color: var(--blanco);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo:focus {
+  outline: none;
+  border-color: var(--rojo);
+  box-shadow: 0 0 0 3px rgba(204,0,0,0.12);
+}
+
+textarea.campo {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.boton-enviar {
+  width: 100%;
+  background-color: var(--rojo);
+  color: var(--blanco);
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boton-enviar:hover {
+  background-color: var(--rojo-oscuro);
+}
+
+/* Opciones de radio y checkbox dela pag.registro.html */
+.grupo-opciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.opcion input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--rojo);
+  cursor: pointer;
+}
+
+.fila-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.texto-ayuda {
+  font-size: 0.8rem;
+  color: var(--gris-suave);
+  margin-top: 4px;
+}
+
+/*17. TABLA (de la pag. tabla  */
+.seccion-tabla {
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-tabla {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.intro-tabla h2 {
+  font-size: 1.8rem;
+  color: var(--negro);
+  margin-bottom: 10px;
+}
+
+.intro-tabla p {
+  color: var(--gris-suave);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.caja-tabla {
+  overflow-x: auto;
+  border: 1px solid var(--gris-borde);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.tabla-academica {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.tabla-academica thead {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+.tabla-academica th {
+  padding: 16px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom: 3px solid var(--rojo);
+}
+
+.tabla-academica td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--gris-borde);
+}
+
+/* Efecto zebra usando filas intercaladas */
+.tabla-academica tbody tr:nth-child(even) {
+  background-color: var(--gris-claro);
+}
+
+.tabla-academica tbody tr:nth-child(odd) {
+  background-color: var(--blanco);
+}
+
+/* Efecto hover en filas */
+.tabla-academica tbody tr:hover {
+  background-color: rgba(204,0,0,0.08);
+}
+
+.codigo {
+  font-weight: 700;
+  color: var(--rojo);
+}
+
+.estado {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.estado-activo {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.estado-proximo {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/*18. PIE DE PAGINA con footer*/
+.pie-pagina {
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 50px 24px 20px 24px;
+}
+
+.contenedor-pie {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.columna-pie h4 {
+  font-size: 1.1rem;
+  color: var(--rojo);
+  margin-bottom: 16px;
+}
+
+.columna-pie p {
+  font-size: 0.9rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+.columna-pie ul {
+  list-style: none;
+}
+
+.columna-pie ul li {
+  margin-bottom: 8px;
+}
+
+.columna-pie ul li a {
+  color: #cccccc;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.columna-pie ul li a:hover {
+  color: var(--rojo);
+}
+
+.pie-inferior {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #333333;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888888;
+}
+
+.pie-inferior a {
+  color: var(--rojo);
+  font-weight: 600;
+}
+
+/*19. Diseño en celulares y tablets*/
+@media (max-width: 900px) {
+  .contenedor-hero,
+  .grid-contacto {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-texto h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-encabezado {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .menu a {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  .banner-interior h1 {
+    font-size: 1.8rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1.6rem;
+  }
+
+  .fila-dos {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-academica th,
+  .tabla-academica td {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .carta-contacto {
+    padding: 22px;
+  }
+}
