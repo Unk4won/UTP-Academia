@@ -1,6 +1,10 @@
-/*Aqui hare los estilos para mi pagina web*/
+/* ==========================================================
+   UTP ACADEMIA - HOJA DE ESTILOS PRINCIPAL (estilo.css)
+   APF2: CSS externo, tipografía, íconos SVG, animaciones,
+   responsive, Flexbox y Grid Layout
+   ========================================================== */
 
-/*1. VARIABLES DE COLOR*/
+/*1. VARIABLES DE COLOR Y DISEÑO*/
 :root {
   --rojo: #cc0000;          /* Rojo UTP */
   --rojo-oscuro: #990000;   /* Rojo oscuro para hover */
@@ -10,6 +14,10 @@
   --gris-borde: #d9d9d9;
   --gris-texto: #333333;
   --gris-suave: #707070;
+  --radio: 10px;                              /* bordes redondeados */
+  --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --sombra-fuerte: 0 12px 24px rgba(0, 0, 0, 0.14);
+  --transicion: 0.3s ease;
 }
 
 /*2. ESTILOS GENERALES*/
@@ -17,6 +25,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -29,6 +41,7 @@ body {
 h1, h2, h3, h4 {
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 700;
+  line-height: 1.25;
 }
 
 a {
@@ -40,7 +53,38 @@ img {
   max-width: 100%;
 }
 
-/*3. ENCABEZADO Y MENU DE NAVEGACION*/
+.enlace-rojo {
+  color: var(--rojo);
+  font-weight: 600;
+}
+
+/*3. ANIMACIONES (@keyframes)*/
+/* Aparece desde abajo: se usa en el hero, tarjetas y testimonios */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Latido del botón principal */
+@keyframes pulso {
+  0%   { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(204, 0, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(204, 0, 0, 0); }
+}
+
+/* Flotación suave de la imagen principal */
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/*4. ENCABEZADO Y MENU DE NAVEGACION (FLEXBOX)*/
 .encabezado {
   position: sticky;
   top: 0;
@@ -50,6 +94,7 @@ img {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* Flexbox: logo a la izquierda, menú a la derecha */
 .contenedor-encabezado {
   max-width: 1200px;
   margin: 0 auto;
@@ -59,7 +104,7 @@ img {
   align-items: center;
 }
 
-/*Logo UTP*/
+/*Logo UTP (Flexbox)*/
 .logo {
   display: flex;
   align-items: center;
@@ -78,7 +123,16 @@ img {
   justify-content: center;
   font-size: 1.6rem;
   border-radius: 3px;
+  transition: transform var(--transicion), background-color var(--transicion);
 }
+
+/* Transform: las cajitas del logo suben una por una al pasar el mouse */
+.logo:hover .logo-caja {
+  transform: translateY(-4px);
+  background-color: var(--rojo);
+}
+.logo:hover .logo-caja:nth-child(2) { transition-delay: 0.05s; }
+.logo:hover .logo-caja:nth-child(3) { transition-delay: 0.1s; }
 
 .logo-mas {
   color: var(--rojo);
@@ -93,7 +147,7 @@ img {
   letter-spacing: -0.5px;
 }
 
-/*Menu de navegacion*/
+/*Menu de navegacion (Flexbox)*/
 .menu {
   display: flex;
   gap: 8px;
@@ -108,45 +162,49 @@ img {
   font-weight: 600;
   color: var(--negro);
   border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
 }
 
 .menu a:hover {
   background-color: var(--rojo);
   color: var(--blanco);
+  transform: translateY(-2px);
 }
 
-/*Enlace de la pagina*/
+/*Enlace de la pagina actual*/
 .menu a.activo {
   background-color: var(--rojo);
   color: var(--blanco);
 }
 
-/*4. BANNER INTERIOR*/
+/*5. BANNER INTERIOR*/
 .banner-interior {
-  background-color: var(--rojo);
+  background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-oscuro) 100%);
   color: var(--blanco);
   padding: 50px 24px;
   text-align: center;
 }
 
 .banner-interior h1 {
-  font-size: 2.4rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin-bottom: 8px;
+  animation: aparecer 0.7s ease both;
 }
 
 .banner-interior p {
   font-size: 1.1rem;
   opacity: 0.95;
+  animation: aparecer 0.9s ease both;
 }
 
-/*5. SECCION PRINCIPAL de la pag. index,html*/
+/*6. SECCION PRINCIPAL de la pag. index.html (GRID)*/
 .hero {
   padding: 60px 24px;
   background: linear-gradient(135deg, rgba(204,0,0,0.06) 0%, var(--blanco) 100%);
   border-bottom: 1px solid var(--gris-borde);
 }
 
+/* Grid: 2 columnas iguales (texto + imagen) */
 .contenedor-hero {
   max-width: 1200px;
   margin: 0 auto;
@@ -156,11 +214,14 @@ img {
   align-items: center;
 }
 
+.hero-texto {
+  animation: aparecer 0.8s ease both;
+}
+
 .hero-texto h1 {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
   color: var(--rojo);
   margin-bottom: 16px;
-  line-height: 1.2;
 }
 
 .hero-texto p {
@@ -168,13 +229,24 @@ img {
   margin-bottom: 24px;
 }
 
-.hero-imagen img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+.hero-texto .boton-rojo {
+  animation: pulso 2.4s infinite;
 }
 
-/*6. BOTONES*/
+.hero-imagen {
+  overflow: hidden;
+  border-radius: var(--radio);
+}
+
+.hero-imagen img {
+  display: block;
+  width: 100%;
+  border-radius: var(--radio);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  animation: flotar 6s ease-in-out infinite;
+}
+
+/*7. BOTONES*/
 .boton {
   display: inline-block;
   padding: 12px 28px;
@@ -184,7 +256,7 @@ img {
   cursor: pointer;
   font-size: 1rem;
   font-family: "Open Sans", sans-serif;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
 }
 
 .boton-rojo {
@@ -206,6 +278,7 @@ img {
 
 .boton-negro:hover {
   background-color: var(--rojo);
+  transform: scale(1.06);
 }
 
 .boton-blanco {
@@ -217,23 +290,35 @@ img {
 .boton-blanco:hover {
   background-color: var(--negro);
   color: var(--blanco);
+  transform: scale(1.06);
 }
 
-/*7. TITULOS DE SECCION*/
+/*8. TITULOS DE SECCION*/
 .titulo-seccion {
   text-align: center;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   color: var(--negro);
   margin-bottom: 40px;
 }
 
-/*8. SECCION "POR QUE UTP ACADEMIA"*/
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 12px auto 0;
+  background-color: var(--rojo);
+  border-radius: 2px;
+}
+
+/*9. SECCION "POR QUE UTP ACADEMIA" (GRID responsive)*/
 .caracteristicas {
   padding: 60px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Grid: columnas automáticas, mínimo 250px cada una */
 .grid-caracteristicas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -243,21 +328,39 @@ img {
 .tarjeta-caracteristica {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
-  border-radius: 10px;
+  border-radius: var(--radio);
   padding: 28px 24px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform var(--transicion), box-shadow var(--transicion), border-color var(--transicion);
+  animation: aparecer 0.7s ease both;
 }
 
+.tarjeta-caracteristica:nth-child(2) { animation-delay: 0.1s; }
+.tarjeta-caracteristica:nth-child(3) { animation-delay: 0.2s; }
+.tarjeta-caracteristica:nth-child(4) { animation-delay: 0.3s; }
+
 .tarjeta-caracteristica:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   border-color: var(--rojo);
 }
 
 .tarjeta-caracteristica .icono {
-  font-size: 2.4rem;
   margin-bottom: 14px;
+}
+
+/* Iconos vectoriales (SVG) */
+.icono-svg {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 0 auto;
+  transition: transform var(--transicion);
+}
+
+/* Transform: el icono gira y crece al pasar el mouse por la tarjeta */
+.tarjeta-caracteristica:hover .icono-svg {
+  transform: rotate(-8deg) scale(1.2);
 }
 
 .tarjeta-caracteristica h3 {
@@ -271,7 +374,7 @@ img {
   color: var(--gris-suave);
 }
 
-/*9. SECCION DE VIDEO */
+/*10. SECCION DE VIDEO */
 .seccion-video {
   padding: 60px 24px;
   background-color: var(--blanco);
@@ -293,7 +396,7 @@ img {
 
 .caja-video {
   background-color: var(--negro);
-  border-radius: 10px;
+  border-radius: var(--radio);
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
@@ -303,7 +406,7 @@ img {
   display: block;
 }
 
-/*10. SECCION DE AUDIO*/
+/*11. SECCION DE AUDIO*/
 .seccion-audio {
   padding: 50px 24px;
   background-color: var(--gris-claro);
@@ -315,9 +418,10 @@ img {
   margin: 0 auto;
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
-  border-radius: 10px;
+  border-left: 5px solid var(--rojo);
+  border-radius: var(--radio);
   padding: 32px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: var(--sombra-suave);
 }
 
 .caja-audio h3 {
@@ -338,7 +442,7 @@ img {
   max-width: 500px;
 }
 
-/*11. SECCION DE CURSOS de las pag.index y servicios*/
+/*12. SECCION DE CURSOS de las pag. index y servicios (GRID)*/
 .cursos {
   padding: 60px 24px;
   background-color: var(--gris-claro);
@@ -346,34 +450,52 @@ img {
   border-bottom: 1px solid var(--gris-borde);
 }
 
+/* Variante con fondo blanco (servicios.html) */
+.cursos-blanco {
+  background-color: var(--blanco);
+  border-top: none;
+}
+
 .contenedor-cursos {
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Grid: tarjetas de curso en columnas automáticas */
 .grid-cursos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 24px;
 }
 
+/* Flexbox (columna): la tarjeta apila imagen y cuerpo */
 .tarjeta-curso {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
-  border-radius: 10px;
+  border-radius: var(--radio);
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform var(--transicion), box-shadow var(--transicion);
   display: flex;
   flex-direction: column;
+  animation: aparecer 0.6s ease both;
 }
 
+.tarjeta-curso:nth-child(2) { animation-delay: 0.1s; }
+.tarjeta-curso:nth-child(3) { animation-delay: 0.2s; }
+
 .tarjeta-curso:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* Las tarjetas filtradas con JavaScript se ocultan */
+.tarjeta-curso.oculta {
+  display: none;
 }
 
 .tarjeta-curso .imagen-curso {
   position: relative;
+  overflow: hidden;
 }
 
 .tarjeta-curso img {
@@ -381,6 +503,12 @@ img {
   height: 180px;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Transform: zoom suave de la imagen al pasar el mouse */
+.tarjeta-curso:hover img {
+  transform: scale(1.1);
 }
 
 .etiqueta-curso {
@@ -416,9 +544,11 @@ img {
   flex-grow: 1;
 }
 
+/* Flexbox: duración y nivel en los extremos */
 .datos-curso {
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   font-size: 0.85rem;
   color: var(--gris-suave);
   font-weight: 600;
@@ -429,6 +559,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
   padding-top: 14px;
   border-top: 1px solid var(--gris-claro);
 }
@@ -439,7 +570,7 @@ img {
   font-size: 0.85rem;
 }
 
-/*12. FILTROS DE CURSOS de la pag.servicios.html*/
+/*13. FILTROS DE CURSOS de la pag. servicios.html (FLEXBOX)*/
 .filtros {
   padding: 30px 24px 10px 24px;
   max-width: 1200px;
@@ -457,9 +588,10 @@ img {
   padding: 8px 18px;
   border-radius: 20px;
   font-weight: 600;
+  font-family: "Open Sans", sans-serif;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: all 0.3s;
+  transition: all var(--transicion);
 }
 
 .boton-filtro:hover,
@@ -469,13 +601,18 @@ img {
   border-color: var(--rojo);
 }
 
-/*13. TESTIMONIOS de la pag.servicios.html*/
+.boton-filtro:hover {
+  transform: translateY(-2px);
+}
+
+/*14. TESTIMONIOS de la pag. servicios.html*/
 .testimonios {
   padding: 60px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+/* Grid: testimonios en columnas automáticas */
 .grid-testimonios {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -488,8 +625,16 @@ img {
   border-left: 4px solid var(--rojo);
   border-radius: 8px;
   padding: 24px;
+  transition: transform var(--transicion), box-shadow var(--transicion);
+  animation: aparecer 0.7s ease both;
 }
 
+.tarjeta-testimonio:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+/* Flexbox: foto + nombre en la misma fila */
 .cabecera-testimonio {
   display: flex;
   align-items: center;
@@ -527,9 +672,9 @@ img {
   letter-spacing: 2px;
 }
 
-/*14. LLAMADA A LA ACCION */
+/*15. LLAMADA A LA ACCION */
 .cta {
-  background-color: var(--rojo);
+  background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-oscuro) 100%);
   color: var(--blanco);
   padding: 50px 24px;
   text-align: center;
@@ -541,7 +686,7 @@ img {
 }
 
 .cta h2 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   margin-bottom: 12px;
 }
 
@@ -551,7 +696,7 @@ img {
   opacity: 0.95;
 }
 
-/*15. CONTACTO de la pag.contacto.html */
+/*16. CONTACTO y REGISTRO (GRID de 2 columnas)*/
 .contacto {
   padding: 60px 24px;
   max-width: 1200px;
@@ -565,12 +710,18 @@ img {
   align-items: start;
 }
 
+/* Registro: columna del formulario más ancha */
+.grid-registro {
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
 .carta-contacto {
   background-color: var(--blanco);
   border: 1px solid var(--gris-borde);
-  border-radius: 10px;
+  border-radius: var(--radio);
   padding: 32px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--sombra-suave);
+  animation: aparecer 0.7s ease both;
 }
 
 .carta-contacto h2 {
@@ -579,6 +730,7 @@ img {
   margin-bottom: 24px;
 }
 
+/* Flexbox: icono a la izquierda, texto a la derecha */
 .item-info {
   display: flex;
   gap: 16px;
@@ -587,9 +739,16 @@ img {
 }
 
 .item-info .icono {
-  font-size: 1.5rem;
-  min-width: 30px;
-  text-align: center;
+  min-width: 36px;
+}
+
+.item-info .icono-svg {
+  width: 36px;
+  height: 36px;
+}
+
+.item-info:hover .icono-svg {
+  transform: scale(1.15);
 }
 
 .item-info h3 {
@@ -608,7 +767,7 @@ img {
   text-decoration: underline;
 }
 
-/*16. FORMULARIOS de las pags. contacto y registro */
+/*17. FORMULARIOS de las pags. contacto y registro */
 .grupo-formulario {
   margin-bottom: 20px;
 }
@@ -630,7 +789,7 @@ img {
   font-size: 0.95rem;
   color: var(--gris-texto);
   background-color: var(--blanco);
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
 }
 
 .campo:focus {
@@ -653,15 +812,17 @@ textarea.campo {
   border-radius: 6px;
   font-weight: 600;
   font-size: 1rem;
+  font-family: "Open Sans", sans-serif;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color var(--transicion), transform var(--transicion);
 }
 
 .boton-enviar:hover {
   background-color: var(--rojo-oscuro);
+  transform: translateY(-2px);
 }
 
-/* Opciones de radio y checkbox dela pag.registro.html */
+/* Opciones de radio y checkbox de la pag. registro.html (Flexbox) */
 .grupo-opciones {
   display: flex;
   flex-wrap: wrap;
@@ -684,6 +845,7 @@ textarea.campo {
   cursor: pointer;
 }
 
+/* Grid: DNI y celular en dos columnas */
 .fila-dos {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -696,7 +858,24 @@ textarea.campo {
   margin-top: 4px;
 }
 
-/*17. TABLA (de la pag. tabla  */
+/* Mensaje de registro enviado (se activa con js/script.js) */
+.mensaje-exito {
+  display: none;
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #d1fae5;
+  color: #065f46;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.mensaje-exito.visible {
+  display: block;
+  animation: aparecer 0.5s ease both;
+}
+
+/*18. TABLA de la pag. tabla.html */
 .seccion-tabla {
   padding: 60px 24px;
   max-width: 1200px;
@@ -720,11 +899,12 @@ textarea.campo {
   margin: 0 auto;
 }
 
+/* overflow-x: la tabla se desliza horizontalmente en celulares */
 .caja-tabla {
   overflow-x: auto;
   border: 1px solid var(--gris-borde);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
 }
 
 .tabla-academica {
@@ -745,6 +925,7 @@ textarea.campo {
   font-weight: 600;
   letter-spacing: 0.5px;
   border-bottom: 3px solid var(--rojo);
+  white-space: nowrap;
 }
 
 .tabla-academica td {
@@ -761,7 +942,11 @@ textarea.campo {
   background-color: var(--blanco);
 }
 
-/* Efecto hover en filas */
+/* Transition: la fila cambia de color suavemente al pasar el mouse */
+.tabla-academica tbody tr {
+  transition: background-color var(--transicion);
+}
+
 .tabla-academica tbody tr:hover {
   background-color: rgba(204,0,0,0.08);
 }
@@ -777,6 +962,7 @@ textarea.campo {
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .estado-activo {
@@ -789,7 +975,7 @@ textarea.campo {
   color: #92400e;
 }
 
-/*18. PIE DE PAGINA con footer*/
+/*19. PIE DE PAGINA (GRID)*/
 .pie-pagina {
   background-color: var(--negro);
   color: var(--blanco);
@@ -826,13 +1012,16 @@ textarea.campo {
 }
 
 .columna-pie ul li a {
+  display: inline-block;
   color: #cccccc;
   font-size: 0.95rem;
-  transition: color 0.3s;
+  transition: color var(--transicion), transform var(--transicion);
 }
 
+/* Transform: el enlace del pie se desplaza a la derecha */
 .columna-pie ul li a:hover {
   color: var(--rojo);
+  transform: translateX(6px);
 }
 
 .pie-inferior {
@@ -850,20 +1039,43 @@ textarea.campo {
   font-weight: 600;
 }
 
-/*19. Diseño en celulares y tablets*/
-@media (max-width: 900px) {
-  .contenedor-hero,
-  .grid-contacto {
-    grid-template-columns: 1fr;
-    text-align: center;
+/*20. DISEÑO RESPONSIVE (media queries)*/
+
+/* Laptops pequeñas y tablets horizontales */
+@media (max-width: 1024px) {
+  .contenedor-hero {
+    gap: 28px;
   }
 
-  .hero-texto h1 {
-    font-size: 2rem;
+  .hero,
+  .caracteristicas,
+  .cursos,
+  .seccion-video {
+    padding-top: 48px;
+    padding-bottom: 48px;
   }
 }
 
+/* Tablets */
+@media (max-width: 900px) {
+  .contenedor-hero,
+  .grid-contacto,
+  .grid-registro {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-hero {
+    text-align: center;
+  }
+
+  .hero-imagen {
+    order: -1; /* la imagen aparece primero en pantallas medianas */
+  }
+}
+
+/* Celulares: menú hamburguesa */
 @media (max-width: 768px) {
+  /* Flexbox: logo arriba y menu debajo, en columna */
   .contenedor-encabezado {
     flex-direction: column;
     gap: 14px;
@@ -880,16 +1092,17 @@ textarea.campo {
     font-size: 0.85rem;
   }
 
-  .banner-interior h1 {
-    font-size: 1.8rem;
+  .hero {
+    padding: 40px 18px;
   }
 
   .titulo-seccion {
-    font-size: 1.6rem;
+    margin-bottom: 28px;
   }
 
   .fila-dos {
     grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .tabla-academica th,
@@ -900,5 +1113,57 @@ textarea.campo {
 
   .carta-contacto {
     padding: 22px;
+  }
+
+  .contacto,
+  .seccion-tabla,
+  .testimonios {
+    padding: 40px 18px;
+  }
+
+  .grid-testimonios {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .banner-interior {
+    padding: 36px 16px;
+  }
+
+  .pie-curso,
+  .datos-curso {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .caja-audio {
+    padding: 22px 16px;
+  }
+
+  .boton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .boton-negro {
+    width: auto;
+  }
+
+  .grupo-opciones {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Accesibilidad: sin animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

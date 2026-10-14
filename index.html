@@ -4,19 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UTP Academia - Inicio</title>
-    <!-----Fuentes de google----->
+    <!-----Fuentes de Google----->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-----Hoja de estilos externa----->
     <link rel="stylesheet" href="estilo.css" />
-    <link
-      rel="icon"
-      href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRikXUz4q4Eh_yL8mUK3vglmkvZxW5pKpzDWf_OQTIE0XQ2OrG_S_ambnJJ&s=10"
-      type="image/png"
-    />
+    <link rel="icon" href="resources/icons/favicon.svg" type="image/svg+xml" />
   </head>
   <body>
     <!-----Encabezado y menu----->
@@ -43,7 +40,7 @@
 
     <!-----Contenido principal----->
     <main>
-      <!-----Seccion de encabezado----->
+      <!-----Seccion principal (hero)----->
       <section class="hero">
         <div class="contenedor-hero">
           <div class="hero-texto">
@@ -71,7 +68,15 @@
         <h2 class="titulo-seccion">¿Por qué elegir UTP Academia?</h2>
         <div class="grid-caracteristicas">
           <article class="tarjeta-caracteristica">
-            <div class="icono">🎓</div>
+            <div class="icono">
+              <img
+                class="icono-svg"
+                src="resources/icons/docentes.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </div>
             <h3>Docentes Expertos</h3>
             <p>
               Profesionales con más de 10 años de experiencia en la industria
@@ -79,7 +84,15 @@
             </p>
           </article>
           <article class="tarjeta-caracteristica">
-            <div class="icono">⏰</div>
+            <div class="icono">
+              <img
+                class="icono-svg"
+                src="resources/icons/horario.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </div>
             <h3>Horarios Flexibles</h3>
             <p>
               Estudia a tu ritmo: modalidad presencial, semipresencial o 100%
@@ -87,7 +100,15 @@
             </p>
           </article>
           <article class="tarjeta-caracteristica">
-            <div class="icono">💼</div>
+            <div class="icono">
+              <img
+                class="icono-svg"
+                src="resources/icons/empleo.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </div>
             <h3>Alta Empleabilidad</h3>
             <p>
               El 85% de nuestros egresados consigue trabajo en los primeros 3
@@ -95,7 +116,15 @@
             </p>
           </article>
           <article class="tarjeta-caracteristica">
-            <div class="icono">💻</div>
+            <div class="icono">
+              <img
+                class="icono-svg"
+                src="resources/icons/tecnologia.svg"
+                alt=""
+                width="48"
+                height="48"
+              />
+            </div>
             <h3>Tecnología de Punta</h3>
             <p>
               Acceso a plataformas modernas y herramientas profesionales usadas
@@ -113,7 +142,6 @@
             Vive la experiencia de una educación superior moderna y tecnológica.
           </p>
           <div class="caja-video">
-            <!-----Video de presentacion----->
             <video autoplay muted loop controls>
               <source
                 src="resources/media/video_promocion_index.mp4"
@@ -137,7 +165,7 @@
           <audio controls>
             <source
               src="resources/media/audio_presentacion.mp3"
-              type="audio/wav"
+              type="audio/mpeg"
             />
             Tu navegador no soporta el elemento de audio.
           </audio>
@@ -149,11 +177,12 @@
         <div class="contenedor-cursos">
           <h2 class="titulo-seccion">Nuestros Cursos Más Populares</h2>
           <div class="grid-cursos">
-            <article class="tarjeta-curso">
+            <article class="tarjeta-curso" data-categoria="Programación">
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop"
                   alt="Curso de Python Básico"
+                  loading="lazy"
                 />
                 <span class="etiqueta-curso">Programación</span>
               </div>
@@ -176,11 +205,12 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso">
+            <article class="tarjeta-curso" data-categoria="Diseño">
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
                   alt="Curso de Diseño Gráfico"
+                  loading="lazy"
                 />
                 <span class="etiqueta-curso">Diseño</span>
               </div>
@@ -203,11 +233,12 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso">
+            <article class="tarjeta-curso" data-categoria="Marketing">
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop"
                   alt="Curso de Marketing Digital"
+                  loading="lazy"
                 />
                 <span class="etiqueta-curso">Marketing</span>
               </div>
@@ -233,7 +264,7 @@
         </div>
       </section>
 
-      <!-----Seccion Llamada a la Accion----->
+      <!-----Llamada a la accion----->
       <section class="cta">
         <div class="cta-contenido">
           <h2>¿Listo para transformar tu carrera?</h2>
