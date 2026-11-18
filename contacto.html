@@ -26,8 +26,18 @@
           <span class="logo-mas">+</span>
           <span class="logo-texto">Academia</span>
         </a>
+        <button
+          type="button"
+          class="boton-menu"
+          id="botonMenu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menuPrincipal"
+        >
+          <span></span><span></span><span></span>
+        </button>
         <nav>
-          <ul class="menu">
+          <ul class="menu" id="menuPrincipal">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="registro.html">Registro</a></li>
@@ -139,7 +149,8 @@
           <!-----Columna 2: Formulario de contacto----->
           <div class="carta-contacto">
             <h2>Envíanos un Mensaje</h2>
-            <form action="#" method="POST">
+            <!-----novalidate: las validaciones y mensajes los gestiona js/script.js----->
+            <form id="formularioContacto" action="#" method="POST" novalidate>
               <div class="grupo-formulario">
                 <label for="nombre" class="etiqueta">Nombre Completo: </label>
                 <input
@@ -150,6 +161,8 @@
                   placeholder="Ej. Juan Pérez"
                   required
                   minlength="3"
+                  maxlength="50"
+                  autocomplete="name"
                 />
               </div>
 
@@ -173,9 +186,9 @@
                   name="telefono"
                   class="campo"
                   placeholder="9XXXXXXXX"
+                  inputmode="numeric"
                   required
-                  pattern="[0-9]{9}"
-                  title="Ingresa 9 dígitos numéricos"
+                  maxlength="9"
                 />
                 <p class="texto-ayuda">Solo 9 dígitos (ejemplo: 951234567)</p>
               </div>
@@ -202,7 +215,9 @@
                   placeholder="Escribe tu consulta aquí..."
                   required
                   minlength="10"
+                  maxlength="500"
                 ></textarea>
+                <p class="texto-ayuda contador">0 / 500</p>
               </div>
 
               <button type="submit" class="boton-enviar">Enviar Mensaje</button>
@@ -247,10 +262,12 @@
       </div>
       <div class="pie-inferior">
         <p>
-          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7 . Todos
+          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7. Todos
           los derechos reservados.
         </p>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
