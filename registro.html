@@ -26,8 +26,18 @@
           <span class="logo-mas">+</span>
           <span class="logo-texto">Academia</span>
         </a>
+        <button
+          type="button"
+          class="boton-menu"
+          id="botonMenu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menuPrincipal"
+        >
+          <span></span><span></span><span></span>
+        </button>
         <nav>
-          <ul class="menu">
+          <ul class="menu" id="menuPrincipal">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="registro.html" class="activo">Registro</a></li>
@@ -55,7 +65,13 @@
           <div class="carta-contacto">
             <h2>Formulario de Inscripción</h2>
 
-            <form id="formularioRegistro" action="#" method="POST">
+            <!-----novalidate: las validaciones y mensajes los gestiona js/script.js----->
+            <form
+              id="formularioRegistro"
+              action="#"
+              method="POST"
+              novalidate
+            >
               <div class="grupo-formulario">
                 <label for="nombre" class="etiqueta">Nombre Completo: </label>
                 <input
@@ -67,8 +83,7 @@
                   required
                   minlength="3"
                   maxlength="50"
-                  pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+"
-                  title="Solo letras y espacios (mínimo 3 caracteres)"
+                  autocomplete="name"
                 />
                 <p class="texto-ayuda">Solo letras, mínimo 3 caracteres.</p>
               </div>
@@ -99,11 +114,10 @@
                     name="numero_documento"
                     class="campo"
                     placeholder="8 dígitos"
+                    inputmode="numeric"
                     required
                     minlength="8"
-                    maxlength="9"
-                    pattern="[0-9]{8}"
-                    title="El DNI debe tener exactamente 8 dígitos numéricos"
+                    maxlength="8"
                   />
                   <p class="texto-ayuda" id="ayudaDocumento">
                     DNI: exactamente 8 dígitos numéricos.
@@ -124,8 +138,6 @@
                     required
                     minlength="9"
                     maxlength="9"
-                    pattern="[Uu][0-9]{8}"
-                    title="La letra U seguida de 8 dígitos (ej. U12345678)"
                   />
                   <p class="texto-ayuda">La letra U + 8 dígitos.</p>
                 </div>
@@ -139,11 +151,10 @@
                     name="celular"
                     class="campo"
                     placeholder="9 dígitos"
+                    inputmode="numeric"
                     required
                     minlength="9"
                     maxlength="9"
-                    pattern="[0-9]{9}"
-                    title="Ingresa 9 dígitos numéricos (ej. 991234561)"
                   />
                   <p class="texto-ayuda">Solo números, 9 dígitos.</p>
                 </div>
@@ -161,15 +172,51 @@
                 />
               </div>
 
+              <!-----Contraseña y confirmación----->
+              <div class="fila-dos">
+                <div class="grupo-formulario">
+                  <label for="password" class="etiqueta">Contraseña: </label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="campo"
+                    placeholder="Mínimo 8 caracteres"
+                    required
+                    minlength="8"
+                    autocomplete="new-password"
+                  />
+                  <div class="barra-fortaleza" aria-hidden="true">
+                    <div id="barraFortaleza"></div>
+                  </div>
+                  <p class="texto-ayuda" id="textoFortaleza">
+                    Usa mayúsculas, minúsculas y números (mínimo 8 caracteres).
+                  </p>
+                </div>
+                <div class="grupo-formulario">
+                  <label for="confirmarPassword" class="etiqueta"
+                    >Confirmar contraseña:
+                  </label>
+                  <input
+                    type="password"
+                    id="confirmarPassword"
+                    name="confirmar_password"
+                    class="campo"
+                    placeholder="Repite la contraseña"
+                    required
+                    autocomplete="new-password"
+                  />
+                </div>
+              </div>
+
               <div class="grupo-formulario">
                 <label class="etiqueta">Género: </label>
-                <div class="grupo-opciones">
+                <div class="grupo-opciones" id="grupoGenero">
                   <label class="opcion">
                     <input
                       type="radio"
                       name="genero"
                       value="masculino"
-                      required
                     />
                     Masculino
                   </label>
@@ -203,7 +250,7 @@
                 <label class="etiqueta"
                   >Cursos de Interés (opción múltiple):
                 </label>
-                <div class="grupo-opciones">
+                <div class="grupo-opciones" id="grupoCursos">
                   <label class="opcion">
                     <input type="checkbox" name="cursos" value="python" />
                     Python Básico
@@ -248,6 +295,7 @@
                   maxlength="500"
                 ></textarea>
                 <p class="texto-ayuda">Mínimo 10 caracteres, máximo 500.</p>
+                <p class="texto-ayuda contador">0 / 500</p>
               </div>
 
               <button type="submit" class="boton-enviar">
@@ -259,6 +307,22 @@
             <div id="mensajeExito" class="mensaje-exito">
               ✅ ¡Registro enviado correctamente! Gracias por inscribirte en UTP
               Academia. :)
+            </div>
+
+            <!-----Arreglo de inscripciones de la sesión (se llena con js/script.js)----->
+            <div class="registros-sesion">
+              <h3>
+                Inscripciones de esta sesión (<span id="contadorRegistros"
+                  >0</span
+                >)
+              </h3>
+              <ul class="lista-registros" id="listaRegistros"></ul>
+              <p class="lista-vacia" id="listaVacia">
+                Aún no hay inscripciones registradas en esta sesión.
+              </p>
+              <button type="button" class="boton boton-negro" id="botonLimpiar">
+                Limpiar lista
+              </button>
             </div>
           </div>
 
@@ -381,7 +445,7 @@
       </div>
       <div class="pie-inferior">
         <p>
-          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7 . Todos
+          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7. Todos
           los derechos reservados.
         </p>
       </div>
