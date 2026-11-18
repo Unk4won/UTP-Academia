@@ -26,8 +26,18 @@
           <span class="logo-mas">+</span>
           <span class="logo-texto">Academia</span>
         </a>
+        <button
+          type="button"
+          class="boton-menu"
+          id="botonMenu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menuPrincipal"
+        >
+          <span></span><span></span><span></span>
+        </button>
         <nav>
-          <ul class="menu">
+          <ul class="menu" id="menuPrincipal">
             <li><a href="index.html" class="activo">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="registro.html">Registro</a></li>
@@ -50,9 +60,16 @@
               impulsar el potencial de nuestros estudiantes y prepararlos para
               el mundo laboral.
             </p>
-            <a href="servicios.html" class="boton boton-rojo"
-              >Explora Nuestros Cursos</a
-            >
+            <div class="hero-acciones">
+              <a href="servicios.html" class="boton boton-rojo"
+                >Explora Nuestros Cursos</a
+              >
+              <!-----Abre un prompt() desde js/script.js----->
+              <button type="button" id="botonSaludo" class="boton boton-contorno">
+                Personalizar saludo
+              </button>
+            </div>
+            <p id="saludo" class="saludo" aria-live="polite"></p>
           </div>
           <div class="hero-imagen">
             <img
@@ -319,5 +336,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
