@@ -26,8 +26,18 @@
           <span class="logo-mas">+</span>
           <span class="logo-texto">Academia</span>
         </a>
+        <button
+          type="button"
+          class="boton-menu"
+          id="botonMenu"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menuPrincipal"
+        >
+          <span></span><span></span><span></span>
+        </button>
         <nav>
-          <ul class="menu">
+          <ul class="menu" id="menuPrincipal">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html" class="activo">Servicios</a></li>
             <li><a href="registro.html">Registro</a></li>
@@ -66,10 +76,15 @@
       </section>
 
       <!-----Catalogo de cursos----->
+      <!-----data-temario: lista separada por "|" que js/script.js muestra en la ventana modal----->
       <section class="cursos cursos-blanco">
         <div class="contenedor-cursos">
           <div class="grid-cursos">
-            <article class="tarjeta-curso" data-categoria="Programación">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Programación"
+              data-temario="Variables y tipos de datos|Condicionales y ciclos|Funciones y módulos|Listas y diccionarios|Proyecto final integrador"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=400&auto=format&fit=crop"
@@ -84,6 +99,7 @@
                   Domina los fundamentos de Python, el lenguaje más versátil del
                   momento. Ideal para principiantes.
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 8 semanas</span>
                   <span>Nivel: Principiante</span>
@@ -97,7 +113,11 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso" data-categoria="Programación">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Programación"
+              data-temario="HTML, CSS y JavaScript moderno|Interfaces con React|API REST con Node.js y Express|Bases de datos y persistencia|Despliegue del proyecto"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop"
@@ -112,6 +132,7 @@
                   Crea aplicaciones web completas con HTML, CSS, JavaScript,
                   React y Node.js. ¡Altamente demandado!
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 12 semanas</span>
                   <span>Nivel: Intermedio</span>
@@ -125,7 +146,11 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso" data-categoria="Diseño">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Diseño"
+              data-temario="Composición, color y tipografía|Identidad visual y logotipos|Material para redes sociales|Edición de imágenes|Portafolio profesional"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop"
@@ -140,6 +165,7 @@
                   Aprende diseño visual con herramientas profesionales. Crea
                   identidades visuales y material moderno.
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 10 semanas</span>
                   <span>Nivel: Principiante</span>
@@ -153,7 +179,11 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso" data-categoria="Marketing">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Marketing"
+              data-temario="Estrategia de contenidos|SEO y posicionamiento|Publicidad en redes sociales|Analítica web|Plan de marketing digital"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?q=80&w=400&auto=format&fit=crop"
@@ -168,6 +198,7 @@
                   Domina estrategias digitales, posicionamiento SEO, publicidad
                   en redes y análisis de datos.
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 8 semanas</span>
                   <span>Nivel: Principiante</span>
@@ -181,7 +212,11 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso" data-categoria="Idiomas">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Idiomas"
+              data-temario="Presentaciones profesionales|Reuniones y llamadas|Correos corporativos|Negociación internacional|Simulacros orales"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400&auto=format&fit=crop"
@@ -196,6 +231,7 @@
                   Mejora tu inglés para negocios: presentaciones, reuniones
                   corporativas y negociaciones internacionales.
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 16 semanas</span>
                   <span>Nivel: Intermedio</span>
@@ -209,7 +245,11 @@
               </div>
             </article>
 
-            <article class="tarjeta-curso" data-categoria="Negocios">
+            <article
+              class="tarjeta-curso"
+              data-categoria="Negocios"
+              data-temario="Conceptos de transformación digital|Gestión ágil de proyectos|Innovación y modelos de negocio|Herramientas colaborativas|Caso práctico"
+            >
               <div class="imagen-curso">
                 <img
                   src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=400&auto=format&fit=crop"
@@ -224,6 +264,7 @@
                   Entiende cómo la tecnología transforma los negocios. Gestión
                   de proyectos digitales e innovación.
                 </p>
+                <button type="button" class="boton-detalle">Ver detalles</button>
                 <div class="datos-curso">
                   <span>Duración: 6 semanas</span>
                   <span>Nivel: Principiante</span>
@@ -322,6 +363,37 @@
       </section>
     </main>
 
+    <!-----Ventana modal: detalle del curso (se llena y se abre con js/script.js)----->
+    <div
+      class="modal"
+      id="modalCurso"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitulo"
+      aria-hidden="true"
+    >
+      <div class="modal-contenido">
+        <button
+          type="button"
+          class="modal-cerrar"
+          id="modalCerrar"
+          aria-label="Cerrar ventana"
+        >
+          &times;
+        </button>
+        <img id="modalImagen" class="modal-imagen" src="" alt="" />
+        <div class="modal-cuerpo">
+          <span class="etiqueta-modal" id="modalCategoria"></span>
+          <h2 id="modalTitulo"></h2>
+          <p id="modalDescripcion"></p>
+          <ul class="modal-datos" id="modalDatos"></ul>
+          <h3>Temario</h3>
+          <ul class="modal-temario" id="modalTemario"></ul>
+          <a href="registro.html" class="boton boton-rojo">Inscribirme</a>
+        </div>
+      </div>
+    </div>
+
     <!-----Pie de pagina----->
     <footer class="pie-pagina">
       <div class="contenedor-pie">
@@ -357,7 +429,7 @@
       </div>
       <div class="pie-inferior">
         <p>
-          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7 . Todos
+          &copy; 2026 UTP Academia - Taller de Programación Web GRUPO 7. Todos
           los derechos reservados.
         </p>
       </div>
