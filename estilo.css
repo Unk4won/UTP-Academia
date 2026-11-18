@@ -2,6 +2,7 @@
    UTP ACADEMIA - HOJA DE ESTILOS PRINCIPAL (estilo.css)
    APF2: CSS externo, tipografía, íconos SVG, animaciones,
    responsive, Flexbox y Grid Layout
+   AVANCE 3: menú hamburguesa, validaciones, modal, buscador
    ========================================================== */
 
 /*1. VARIABLES DE COLOR Y DISEÑO*/
@@ -14,6 +15,8 @@
   --gris-borde: #d9d9d9;
   --gris-texto: #333333;
   --gris-suave: #707070;
+  --error: #b91c1c;                           /* mensajes de validación */
+  --exito: #16a34a;
   --radio: 10px;                              /* bordes redondeados */
   --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.06);
   --sombra-fuerte: 0 12px 24px rgba(0, 0, 0, 0.14);
@@ -69,6 +72,12 @@ img {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Aparición simple del fondo oscuro del modal */
+@keyframes aparecerFondo {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* Latido del botón principal */
@@ -177,6 +186,43 @@ img {
   color: var(--blanco);
 }
 
+/*Boton hamburguesa: oculto en escritorio, visible en celulares (ver media query)*/
+.boton-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  background: none;
+  border: 2px solid var(--negro);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color var(--transicion);
+}
+
+.boton-menu span {
+  display: block;
+  width: 22px;
+  height: 3px;
+  background-color: var(--negro);
+  border-radius: 2px;
+  transition: transform var(--transicion), opacity var(--transicion), background-color var(--transicion);
+}
+
+.boton-menu:hover,
+.boton-menu.activo {
+  border-color: var(--rojo);
+}
+
+.boton-menu:hover span,
+.boton-menu.activo span {
+  background-color: var(--rojo);
+}
+
+/* Transform: las 3 barras se convierten en una X al abrir el menú */
+.boton-menu.activo span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.boton-menu.activo span:nth-child(2) { opacity: 0; }
+.boton-menu.activo span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
 /*5. BANNER INTERIOR*/
 .banner-interior {
   background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-oscuro) 100%);
@@ -233,6 +279,26 @@ img {
   animation: pulso 2.4s infinite;
 }
 
+/* Flexbox: botones del hero (explorar + saludo personalizado) */
+.hero-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Saludo generado con JavaScript (prompt) */
+.hero-texto .saludo {
+  display: none;
+  margin: 20px 0 0;
+  font-weight: 600;
+  color: var(--rojo);
+}
+
+.hero-texto .saludo.visible {
+  display: block;
+  animation: aparecer 0.5s ease both;
+}
+
 .hero-imagen {
   overflow: hidden;
   border-radius: var(--radio);
@@ -259,6 +325,12 @@ img {
   transition: background-color var(--transicion), color var(--transicion), transform var(--transicion);
 }
 
+.boton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
 .boton-rojo {
   background-color: var(--rojo);
   color: var(--blanco);
@@ -276,7 +348,7 @@ img {
   font-size: 0.9rem;
 }
 
-.boton-negro:hover {
+.boton-negro:hover:not(:disabled) {
   background-color: var(--rojo);
   transform: scale(1.06);
 }
@@ -291,6 +363,18 @@ img {
   background-color: var(--negro);
   color: var(--blanco);
   transform: scale(1.06);
+}
+
+.boton-contorno {
+  background-color: transparent;
+  color: var(--rojo);
+  border: 2px solid var(--rojo);
+}
+
+.boton-contorno:hover {
+  background-color: var(--rojo);
+  color: var(--blanco);
+  transform: translateY(-2px);
 }
 
 /*8. TITULOS DE SECCION*/
@@ -544,6 +628,26 @@ img {
   flex-grow: 1;
 }
 
+/* Boton "Ver detalles" que abre la ventana modal */
+.boton-detalle {
+  align-self: flex-start;
+  margin-bottom: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--rojo);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color var(--transicion);
+}
+
+.boton-detalle:hover {
+  color: var(--negro);
+}
+
 /* Flexbox: duración y nivel en los extremos */
 .datos-curso {
   display: flex;
@@ -789,7 +893,7 @@ img {
   font-size: 0.95rem;
   color: var(--gris-texto);
   background-color: var(--blanco);
-  transition: border-color var(--transicion), box-shadow var(--transicion);
+  transition: border-color var(--transicion), box-shadow var(--transicion), background-color var(--transicion);
 }
 
 .campo:focus {
@@ -897,6 +1001,29 @@ textarea.campo {
   color: var(--gris-suave);
   max-width: 700px;
   margin: 0 auto;
+}
+
+/* Buscador y filtro de estado de la tabla (Flexbox) */
+.herramientas-tabla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.herramientas-tabla input.campo {
+  flex: 1 1 260px;
+}
+
+.herramientas-tabla select.campo {
+  flex: 0 1 220px;
+}
+
+.resultados-tabla {
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gris-suave);
 }
 
 /* overflow-x: la tabla se desliza horizontalmente en celulares */
@@ -1039,7 +1166,208 @@ textarea.campo {
   font-weight: 600;
 }
 
-/*20. DISEÑO RESPONSIVE (media queries)*/
+/*20. VALIDACION DE FORMULARIOS (clases que activa js/script.js)*/
+.campo.campo-invalido {
+  border-color: var(--error);
+  background-color: #fef2f2;
+}
+
+.campo.campo-invalido:focus {
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.15);
+}
+
+.campo.campo-valido {
+  border-color: var(--exito);
+}
+
+/* Grupo de radios o checkboxes sin seleccionar */
+.grupo-opciones.campo-invalido {
+  outline: 1px solid var(--error);
+  outline-offset: 6px;
+  border-radius: 6px;
+}
+
+.mensaje-error {
+  margin-top: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--error);
+  animation: aparecer 0.3s ease both;
+}
+
+.mensaje-error::before {
+  content: "⚠ ";
+}
+
+/* Contador de caracteres del textarea */
+.contador {
+  text-align: right;
+}
+
+/* Barra de seguridad de la contraseña (su ancho y color los cambia JS con style) */
+.barra-fortaleza {
+  height: 6px;
+  margin-top: 8px;
+  background-color: var(--gris-borde);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#barraFortaleza {
+  width: 0;
+  height: 100%;
+  transition: width var(--transicion), background-color var(--transicion);
+}
+
+/*21. LISTA DE INSCRIPCIONES DE LA SESION (registro.html)*/
+.registros-sesion {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--gris-borde);
+}
+
+.registros-sesion h3 {
+  font-size: 1.1rem;
+  color: var(--negro);
+}
+
+.lista-registros {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0;
+  list-style: none;
+}
+
+.item-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 14px;
+  background-color: var(--gris-claro);
+  border-left: 4px solid var(--rojo);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  animation: aparecer 0.4s ease both;
+}
+
+.item-registro span {
+  color: var(--gris-suave);
+}
+
+.lista-vacia {
+  margin: 14px 0;
+  font-size: 0.9rem;
+  color: var(--gris-suave);
+}
+
+/*22. VENTANA MODAL (servicios.html)*/
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+/* JS agrega la clase "visible" para abrirlo y la quita para cerrarlo */
+.modal.visible {
+  display: flex;
+  animation: aparecerFondo 0.25s ease both;
+}
+
+.modal-contenido {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding-bottom: 28px;
+  background-color: var(--blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-fuerte);
+  animation: aparecer 0.35s ease both;
+}
+
+.modal-imagen {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.modal-cuerpo {
+  padding: 24px 28px 0;
+}
+
+.modal-cerrar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--negro);
+  color: var(--blanco);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--transicion), transform var(--transicion);
+}
+
+.modal-cerrar:hover {
+  background-color: var(--rojo);
+  transform: rotate(90deg);
+}
+
+.etiqueta-modal {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: var(--rojo);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.modal-cuerpo h2 {
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: var(--rojo);
+}
+
+.modal-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+  list-style: none;
+}
+
+.modal-datos li {
+  padding: 4px 12px;
+  background-color: var(--gris-claro);
+  border: 1px solid var(--gris-borde);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.modal-cuerpo h3 {
+  margin: 14px 0 8px;
+  font-size: 1rem;
+}
+
+.modal-temario {
+  margin: 0 0 22px 20px;
+  color: var(--gris-suave);
+}
+
+/*23. DISEÑO RESPONSIVE (media queries)*/
 
 /* Laptops pequeñas y tablets horizontales */
 @media (max-width: 1024px) {
@@ -1068,6 +1396,10 @@ textarea.campo {
     text-align: center;
   }
 
+  .hero-acciones {
+    justify-content: center;
+  }
+
   .hero-imagen {
     order: -1; /* la imagen aparece primero en pantallas medianas */
   }
@@ -1075,21 +1407,39 @@ textarea.campo {
 
 /* Celulares: menú hamburguesa */
 @media (max-width: 768px) {
-  /* Flexbox: logo arriba y menu debajo, en columna */
+  /* Flexbox: logo y botón en la primera fila, el menú desplegable debajo */
   .contenedor-encabezado {
-    flex-direction: column;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 12px 18px;
   }
 
+  .boton-menu {
+    display: flex;
+  }
+
+  .encabezado nav {
+    width: 100%;
+  }
+
+  /* El menú permanece oculto hasta que JS le agrega la clase "abierto" */
   .menu {
-    flex-wrap: wrap;
-    justify-content: center;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
     gap: 4px;
+    padding-top: 12px;
+  }
+
+  .menu.abierto {
+    display: flex;
+    animation: aparecer 0.3s ease both;
   }
 
   .menu a {
-    padding: 6px 10px;
-    font-size: 0.85rem;
+    padding: 12px 14px;
+    font-size: 1rem;
   }
 
   .hero {
@@ -1124,6 +1474,10 @@ textarea.campo {
   .grid-testimonios {
     grid-template-columns: 1fr;
   }
+
+  .modal-cuerpo {
+    padding: 20px 20px 0;
+  }
 }
 
 /* Celulares pequeños */
@@ -1154,6 +1508,10 @@ textarea.campo {
   .grupo-opciones {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .modal-imagen {
+    height: 150px;
   }
 }
 
